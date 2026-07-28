@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>uuina | AI Agent & Scientific Automation Engineer</title>
+  <meta name="description" content="uuina 的个人主页与 AI 科研工程自动化工具枢纽。涵盖 Origin 出版级科研绘图、CNIPA 专利自动化撰写、COMSOL 多物理场 AI 建模与过程层析成像 (ECVT/ECT)。">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background Glow & Grid Canvas -->
+  <div class="bg-glow-container">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+    <div class="bg-grid"></div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <span class="brand-badge"><i class="fa-solid fa-brain"></i></span>
+        <span class="brand-text">uuina<span class="dot">.</span>dev</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#about" class="nav-link active">关于主页</a>
+        <a href="#skills" class="nav-link">技能库</a>
+        <a href="#demo-spec" class="nav-link">StyleSpec 工具</a>
+        <a href="#projects" class="nav-link">开源项目</a>
+        <a href="#contact" class="nav-link">联系合作</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://github.com/uuina" target="_blank" class="btn-github" title="访问 GitHub">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="about" class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <span class="pulse-dot"></span>
+          <span>AI Agent & Scientific Automation Engineer</span>
+        </div>
+        <h1 class="hero-title">
+          用 AI 驱动 <span class="gradient-text">科研与工程自动化</span>
+        </h1>
+        <p class="hero-description">
+          专注于 Model Context Protocol (MCP) 服务端开发、Agent 技能规则引擎构建、出版级科研图表生成、专利工程自动化以及过程层析成像（ECT/ECVT）信号处理。
+        </p>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-value" id="counter-skills">69+</span>
+            <span class="stat-label">AI Agent 技能库</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">600 DPI</span>
+            <span class="stat-label">出版级自动绘图</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">MCP</span>
+            <span class="stat-label">全栈协议集成</span>
+          </div>
+        </div>
+
+        <div class="hero-btns">
+          <a href="#skills" class="btn-primary">
+            <i class="fa-solid fa-compass"></i> 探索技能库
+          </a>
+          <a href="#demo-spec" class="btn-secondary">
+            <i class="fa-solid fa-sliders"></i> 在线体验 StyleSpec
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card-wrapper">
+        <div class="glass-card terminal-card">
+          <div class="terminal-header">
+            <div class="term-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="term-title">uuina-agent-engine.py</div>
+          </div>
+          <div class="terminal-body">
+            <pre><code class="language-python"><span class="code-keyword">import</span> agent_system <span class="code-keyword">as</span> agy
+
+<span class="code-comment"># Initialize AI Agent Environment</span>
+agent = agy.Agent(name=<span class="code-str">"Antigravity"</span>, domain=<span class="code-str">"Science & Engineering"</span>)
+
+<span class="code-comment"># Load Core Capability Modules</span>
+agent.load_skill(<span class="code-str">"origin-figure-skill"</span>)   <span class="code-comment"># 600DPI Nature Plotting</span>
+agent.load_skill(<span class="code-str">"cnipa-patent-writing"</span>)  <span class="code-comment"># IP & Patent Drafting</span>
+agent.load_skill(<span class="code-str">"comsol-ai-modeling"</span>)   <span class="code-comment"># Multi-physics FEA</span>
+agent.load_skill(<span class="code-str">"process-tomography"</span>)   <span class="code-comment"># ECVT / ECT Sensing</span>
+
+<span class="code-keyword">print</span>(agent.status())
+<span class="code-comment"># Output: [Ready] 69 Skills Active. All Systems Go.</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Matrix Section -->
+  <section id="skills" class="skills-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="subtitle">CORE COMPETENCIES</div>
+        <h2>技能库与能力体系</h2>
+        <p>结合 AI Agent 架构、自动化推理与领域工程算法的技能沉淀</p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Skill 1 -->
+        <div class="glass-card skill-card" data-category="plotting">
+          <div class="skill-icon icon-blue">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <div class="skill-tag">开源核心</div>
+          <h3>Origin 科研绘图自动化</h3>
+          <p>基于 StyleSpec v2 与 Origin MCP COM 通信，实现自然语言/模板到 Nature、ACS、IEEE 等 600 DPI 矢/栅格出版级科研图表生成。</p>
+          <div class="skill-features">
+            <span><i class="fa-solid fa-check"></i> Okabe-Ito 色盲友好</span>
+            <span><i class="fa-solid fa-check"></i> 双 Y 轴 / 多面板合成</span>
+            <span><i class="fa-solid fa-check"></i> 多模态 Vision 审查闭环</span>
+          </div>
+        </div>
+
+        <!-- Skill 2 -->
+        <div class="glass-card skill-card" data-category="patent">
+          <div class="skill-icon icon-purple">
+            <i class="fa-solid fa-file-contract"></i>
+          </div>
+          <div class="skill-tag">知识产权</div>
+          <h3>CNIPA 专利自动化撰写</h3>
+          <p>从技术交底书与研发文档中提炼核心创新点，自动生成符合中国 CNIPA 规范的权利要求书、说明书草稿与正文结构。</p>
+          <div class="skill-features">
+            <span><i class="fa-solid fa-check"></i> 创新点层级提炼</span>
+            <span><i class="fa-solid fa-check"></i> 权利要求书逻辑校验</span>
+            <span><i class="fa-solid fa-check"></i> 审查意见前置预判</span>
+          </div>
+        </div>
+
+        <!-- Skill 3 -->
+        <div class="glass-card skill-card" data-category="simulation">
+          <div class="skill-icon icon-emerald">
+            <i class="fa-solid fa-cubes"></i>
+          </div>
+          <div class="skill-tag">多物理场</div>
+          <h3>COMSOL AI 参数化建模</h3>
+          <p>结合 LLM 与物理场接口，探索多物理场有限元仿真（FEA）的参数化建模、网格划分指导与仿真结果分析自动化。</p>
+          <div class="skill-features">
+            <span><i class="fa-solid fa-check"></i> 几何参数化构建</span>
+            <span><i class="fa-solid fa-check"></i> 物理场条件绑定</span>
+            <span><i class="fa-solid fa-check"></i> 仿真数据解析</span>
+          </div>
+        </div>
+
+        <!-- Skill 4 -->
+        <div class="glass-card skill-card" data-category="tomography">
+          <div class="skill-icon icon-amber">
+            <i class="fa-solid fa-wave-square"></i>
+          </div>
+          <div class="skill-tag">工业感知</div>
+          <h3>过程层析成像 (ECT/ECVT)</h3>
+          <p>电容层析成像（ECT）与电容体层析成像（ECVT）数据处理算法，包含阵列传感器信号校准、卡尔曼滤波与归一化反演。</p>
+          <div class="skill-features">
+            <span><i class="fa-solid fa-check"></i> 24电极信号采集接口</span>
+            <span><i class="fa-solid fa-check"></i> 实时数据滤波归一化</span>
+            <span><i class="fa-solid fa-check"></i> 图像重建算法映射</span>
+          </div>
+        </div>
+
+        <!-- Skill 5 -->
+        <div class="glass-card skill-card" data-category="mcp">
+          <div class="skill-icon icon-cyan">
+            <i class="fa-solid fa-network-wired"></i>
+          </div>
+          <div class="skill-tag">Agent 架构</div>
+          <h3>MCP Server & 技能云同步</h3>
+          <p>基于 Anthropic Model Context Protocol 构建自定义工具服务器，配合 `agent-skills-backup` 技能实现本地到 GitHub 的双向版本同步。</p>
+          <div class="skill-features">
+            <span><i class="fa-solid fa-check"></i> Pydantic Schema 校验</span>
+            <span><i class="fa-solid fa-check"></i> 自动化 GitHub Sync</span>
+            <span><i class="fa-solid fa-check"></i> 安全凭证管理</span>
+          </div>
+        </div>
+
+        <!-- Skill 6 -->
+        <div class="glass-card skill-card" data-category="ocr">
+          <div class="skill-icon icon-rose">
+            <i class="fa-solid fa-eye"></i>
+          </div>
+          <div class="skill-tag">视觉与OCR</div>
+          <h3>Mistral OCR & 多模态感知</h3>
+          <p>整合高精度视觉模型与 Mistral OCR API，提取复杂学术论文、图表公式及多栏格式排版数据。</p>
+          <div class="skill-features">
+            <span><i class="fa-solid fa-check"></i> 学术公式 LaTeX 提取</span>
+            <span><i class="fa-solid fa-check"></i> 复杂表格 Markdown 结构化</span>
+            <span><i class="fa-solid fa-check"></i> 多模态图表视觉审核</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive StyleSpec Generator Section -->
+  <section id="demo-spec" class="demo-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="subtitle">INTERACTIVE DEMO</div>
+        <h2>StyleSpec v2 配置生成器</h2>
+        <p>在线配置出版级绘图参数，体验声明式 StyleSpec 规范生成的结构化 JSON</p>
+      </div>
+
+      <div class="demo-grid glass-card">
+        <!-- Control Panel -->
+        <div class="demo-controls">
+          <h3><i class="fa-solid fa-sliders"></i> 图表参数配置</h3>
+          
+          <div class="control-group">
+            <label for="preset-select">期刊预设 (Journal Preset)</label>
+            <select id="preset-select" class="form-select">
+              <option value="my-journal">my-journal (通用学术规范)</option>
+              <option value="nature">Nature / Nature Physics</option>
+              <option value="acs">ACS Nano / Nano Letters</option>
+              <option value="ieee">IEEE Transactions</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="type-select">图表类型 (Figure Type)</label>
+            <select id="type-select" class="form-select">
+              <option value="double_y">Double-Y (双 Y 轴动力学图)</option>
+              <option value="line">Line (折线图)</option>
+              <option value="scatter">Scatter (散点图)</option>
+              <option value="column">Column (柱状图)</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="palette-select">色彩策略 (Color Palette)</label>
+            <select id="palette-select" class="form-select">
+              <option value="okabe-ito">Okabe-Ito (色盲友好 - 推荐)</option>
+              <option value="tol-bright">Tol-Bright (高对比彩图)</option>
+              <option value="grayscale">Grayscale (经典灰度出版)</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="font-select">字体系列 (Typography)</label>
+            <select id="font-select" class="form-select">
+              <option value="Times New Roman">Times New Roman + 宋体</option>
+              <option value="Arial">Arial + 黑体</option>
+            </select>
+          </div>
+
+          <div class="control-group">
+            <label for="x-title">X 轴物理量标题</label>
+            <input type="text" id="x-title" class="form-input" value="t (ps)">
+          </div>
+
+          <div class="control-group">
+            <label for="y1-title">Y1 轴物理量标题</label>
+            <input type="text" id="y1-title" class="form-input" value="ΔT/T₀ (10⁻³)">
+          </div>
+
+          <div class="control-group">
+            <label for="y2-title">Y2 轴物理量标题</label>
+            <input type="text" id="y2-title" class="form-input" value="ΔE_g (meV)">
+          </div>
+        </div>
+
+        <!-- JSON Output Preview -->
+        <div class="demo-preview">
+          <div class="preview-header">
+            <span><i class="fa-solid fa-code"></i> Generated StyleSpec JSON</span>
+            <button id="btn-copy-json" class="btn-copy">
+              <i class="fa-regular fa-copy"></i> 复制 JSON
+            </button>
+          </div>
+          <div class="preview-body">
+            <pre><code id="json-code-block" class="language-json"></code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Section -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="subtitle">OPEN SOURCE REPOSITORIES</div>
+        <h2>项目矩阵</h2>
+        <p>开源全栈工具库与领域计算仓库</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="glass-card project-card">
+          <div class="project-header">
+            <i class="fa-brands fa-github project-icon"></i>
+            <span class="project-visibility public">Public</span>
+          </div>
+          <h3>origin-figure-mcp-skill</h3>
+          <p>出版级 Origin 科研绘图自动化全栈工作流（MCP Server + AI Agent Skill 技能闭环）。</p>
+          <div class="project-tags">
+            <span>Python</span>
+            <span>OriginPro</span>
+            <span>MCP</span>
+            <span>StyleSpec</span>
+          </div>
+          <a href="https://github.com/uuina/origin-figure-mcp-skill" target="_blank" class="project-link">
+            查看源码 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="glass-card project-card">
+          <div class="project-header">
+            <i class="fa-brands fa-github project-icon"></i>
+            <span class="project-visibility public">Public</span>
+          </div>
+          <h3>cnipa-patent-writing</h3>
+          <p>符合中国 CNIPA 规范的发明专利与实用新型专利自动化结构与撰写技能工具。</p>
+          <div class="project-tags">
+            <span>AI Skill</span>
+            <span>CNIPA</span>
+            <span>Patent Drafting</span>
+          </div>
+          <a href="https://github.com/uuina/cnipa-patent-writing" target="_blank" class="project-link">
+            查看源码 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="glass-card project-card">
+          <div class="project-header">
+            <i class="fa-brands fa-github project-icon"></i>
+            <span class="project-visibility public">Public</span>
+          </div>
+          <h3>mistral-ocr-mcp</h3>
+          <p>基于 Mistral OCR API 的 MCP 工具服务端，用于提取复杂学术文档与公式。</p>
+          <div class="project-tags">
+            <span>Python</span>
+            <span>MCP</span>
+            <span>OCR</span>
+            <span>Vision</span>
+          </div>
+          <a href="https://github.com/uuina/mistral-ocr-mcp" target="_blank" class="project-link">
+            查看源码 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="glass-card project-card">
+          <div class="project-header">
+            <i class="fa-brands fa-github project-icon"></i>
+            <span class="project-visibility public">Public</span>
+          </div>
+          <h3>AI_for_comsol</h3>
+          <p>利用人工智能实现 COMSOL 多物理场参数化建模与仿真接口。</p>
+          <div class="project-tags">
+            <span>Python</span>
+            <span>COMSOL</span>
+            <span>FEA Simulation</span>
+          </div>
+          <a href="https://github.com/uuina/AI_for_comsol" target="_blank" class="project-link">
+            查看源码 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Footer Section -->
+  <footer id="contact" class="footer-section">
+    <div class="container">
+      <div class="glass-card contact-card">
+        <div class="contact-text">
+          <h2>探索合作与技术交流</h2>
+          <p>如果您对 AI 科研绘图自动化、专利工程工具或过程层析成像算法感兴趣，欢迎通过 GitHub 交流或发起合作。</p>
+        </div>
+        <div class="contact-btns">
+          <a href="https://github.com/uuina" target="_blank" class="btn-primary">
+            <i class="fa-brands fa-github"></i> GitHub @uuina
+          </a>
+          <a href="mailto:uuina@users.noreply.github.com" class="btn-secondary">
+            <i class="fa-solid fa-envelope"></i> 发送邮件
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copyright">
+          © 2026 uuina. Domain: <a href="https://hnnilovey.me" target="_blank">hnnilovey.me</a>. Powered by GitHub Pages.
+        </div>
+        <div class="footer-socials">
+          <a href="https://github.com/uuina" target="_blank"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom App Script -->
+  <script src="app.js"></script>
+</body>
+</html>
