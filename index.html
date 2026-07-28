@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="style.css?v=6.0">
+  <link rel="stylesheet" href="style.css?v=7.0">
 </head>
 <body>
   <!-- Background Mesh Canvas -->
@@ -42,9 +42,29 @@
         <a href="https://github.com/uuina" target="_blank" class="btn-github" title="访问 GitHub">
           <i class="fa-brands fa-github"></i> GitHub
         </a>
+        <button id="mobile-menu-toggle" class="mobile-toggle-btn" aria-label="Toggle Navigation Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- Mobile Navigation Drawer Overlay -->
+  <div id="mobile-drawer" class="mobile-drawer-overlay">
+    <div class="mobile-drawer-content">
+      <nav class="mobile-drawer-links">
+        <a href="#about" class="mobile-nav-link"><i class="fa-solid fa-user"></i> 关于我</a>
+        <a href="#ect-research" class="mobile-nav-link"><i class="fa-solid fa-cubes"></i> 核心科研 (ECT/ECVT)</a>
+        <a href="#blog" class="mobile-nav-link"><i class="fa-regular fa-newspaper"></i> 博客文章</a>
+        <a href="#tools" class="mobile-nav-link"><i class="fa-solid fa-wrench"></i> 辅助工具</a>
+      </nav>
+      <div class="mobile-drawer-footer">
+        <a href="https://github.com/uuina" target="_blank" class="btn-github-drawer">
+          <i class="fa-brands fa-github"></i> GitHub 仓库
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- Hero Section -->
   <section id="about" class="hero-section">
@@ -275,6 +295,6 @@
   <!-- Marked.js for Markdown parsing -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <!-- Custom App Script -->
-  <script src="app.js?v=6.0"></script>
+  <script src="app.js?v=7.0"></script>
 </body>
 </html>

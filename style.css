@@ -182,6 +182,110 @@ body {
   border-color: var(--border-hover);
 }
 
+.btn-github:active, .btn-primary:active, .btn-secondary:active {
+  transform: scale(0.97);
+}
+
+.mobile-toggle-btn {
+  display: none;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.mobile-toggle-btn:hover {
+  background: var(--bg-card-hover);
+}
+
+/* Mobile Drawer Overlay */
+.mobile-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  top: 54px;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-drawer-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-drawer-content {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem;
+  transform: translateY(-20px);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+}
+
+.mobile-drawer-overlay.active .mobile-drawer-content {
+  transform: translateY(0);
+}
+
+.mobile-drawer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.mobile-nav-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+}
+
+.mobile-nav-link:hover, .mobile-nav-link:active {
+  background: var(--bg-card-hover);
+  color: var(--accent-violet);
+}
+
+.mobile-drawer-footer {
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.btn-github-drawer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 0.75rem;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
 /* Hero Section */
 .hero-section {
   padding: 130px 0 80px;
@@ -909,123 +1013,38 @@ body {
     font-size: 0.75rem;
   }
 
+  /* Mobile Touch Adjustments */
+  .mobile-toggle-btn {
+    display: flex;
+  }
+
   .nav-links {
-    gap: 0.9rem;
+    display: none; /* Replaced by Glassmorphic Drawer */
   }
 
-  .nav-link {
-    font-size: 0.8rem;
+  .nav-actions .btn-github {
+    display: none; /* Shown inside Drawer footer on mobile */
   }
 
-  .btn-github {
-    padding: 0.35rem 0.7rem;
-    font-size: 0.78rem;
+  /* Modal Fullscreen Optimization on Mobile */
+  .modal-overlay {
+    align-items: flex-end; /* Bottom Sheet Feel on Mobile */
   }
 
-  /* Hero Section Mobile Polish */
-  .hero-section {
-    padding: 84px 0 40px;
-  }
-
-  .hero-tag {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.75rem;
-    margin-bottom: 1.2rem;
-  }
-
-  .hero-title {
-    font-size: 1.85rem;
-    line-height: 1.22;
-    margin-bottom: 1rem;
-  }
-
-  .hero-description {
-    font-size: 0.9rem;
-    line-height: 1.55;
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
-    text-align: center;
-    padding-top: 1rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .stat-value {
-    font-size: 1.15rem;
-  }
-
-  .stat-label {
-    font-size: 0.7rem;
-  }
-
-  .hero-btns {
-    flex-direction: column;
-    width: 100%;
-    gap: 0.75rem;
-  }
-
-  .btn-primary, .btn-secondary {
-    width: 100%;
-    justify-content: center;
-    padding: 0.75rem 1rem;
-    font-size: 0.88rem;
-  }
-
-  /* Code Card Mobile Adjustments */
-  .code-card-header {
-    padding: 0.5rem 0.9rem;
-  }
-
-  .code-card-body {
-    padding: 0.9rem 0.8rem;
-    font-size: 0.76rem;
-    line-height: 1.55;
-  }
-
-  /* Section Padding & Headings */
-  .skills-section, .blog-section, .projects-section {
-    padding: 45px 0;
-  }
-
-  .section-header {
-    margin-bottom: 2rem;
-  }
-
-  .section-header h2 {
-    font-size: 1.6rem;
-  }
-
-  .section-header p {
-    font-size: 0.88rem;
-  }
-
-  /* Cards Padding */
-  .blog-card, .skill-card, .project-card {
-    padding: 1.25rem 1.1rem;
-  }
-
-  .blog-card h3, .skill-card h3, .project-card h3 {
-    font-size: 1.05rem;
-  }
-
-  .blog-card p, .skill-card p, .project-card p {
-    font-size: 0.85rem;
-    margin-bottom: 1rem;
-  }
-
-  /* Modal Optimization on Mobile */
   .modal-card {
-    width: 94%;
-    max-height: 88vh;
-    border-radius: var(--radius-lg);
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+    border: none;
   }
 
   .modal-header {
-    padding: 0.9rem 1.1rem;
+    padding: 1.1rem 1.2rem;
+    position: sticky;
+    top: 0;
+    background: var(--bg-surface);
+    z-index: 10;
   }
 
   .modal-title {
@@ -1033,9 +1052,9 @@ body {
   }
 
   .modal-body {
-    padding: 1.1rem 1rem;
-    font-size: 0.88rem;
-    line-height: 1.65;
+    padding: 1.2rem 1.1rem 3rem;
+    font-size: 0.92rem;
+    line-height: 1.7;
   }
 
   /* Footer Mobile Layout */

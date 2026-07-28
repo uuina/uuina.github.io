@@ -105,6 +105,49 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Mobile Drawer Toggle Logic
+  const mobileToggleBtn = document.getElementById('mobile-menu-toggle');
+  const mobileDrawer = document.getElementById('mobile-drawer');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+  function toggleMobileDrawer(open) {
+    if (!mobileDrawer || !mobileToggleBtn) return;
+    const isOpen = open !== undefined ? open : !mobileDrawer.classList.contains('active');
+    
+    if (isOpen) {
+      mobileDrawer.classList.add('active');
+      mobileToggleBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+      document.body.style.overflow = 'hidden';
+    } else {
+      mobileDrawer.classList.remove('active');
+      mobileToggleBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (mobileToggleBtn) {
+    mobileToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleMobileDrawer();
+    });
+  }
+
+  // Close Mobile Drawer when a link inside it is clicked
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      toggleMobileDrawer(false);
+    });
+  });
+
+  // Close Mobile Drawer when clicking backdrop
+  if (mobileDrawer) {
+    mobileDrawer.addEventListener('click', (e) => {
+      if (e.target === mobileDrawer) {
+        toggleMobileDrawer(false);
+      }
+    });
+  }
+
   // Smooth Active Nav Highlighting on Scroll
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('.nav-link');
