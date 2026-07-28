@@ -56,10 +56,15 @@ html {
   color: var(--text-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden !important;
 }
 
 body {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100vw;
   position: relative;
   min-height: 100vh;
   background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.06) 0%, transparent 50%),
@@ -463,6 +468,16 @@ body {
   line-height: 1.6;
   color: var(--text-secondary);
   overflow-x: auto;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.code-card-body pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-x: hidden;
+  margin: 0;
 }
 
 .code-keyword { color: var(--accent-violet); font-weight: 600; }
@@ -507,8 +522,9 @@ body {
 
 .blog-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
+  width: 100%;
 }
 
 .blog-card {
@@ -592,8 +608,9 @@ body {
 
 .skills-grid, .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.4rem;
+  width: 100%;
 }
 
 .skill-card, .project-card {
@@ -990,9 +1007,27 @@ body {
 
 /* Mobile Screens (<= 640px) */
 @media (max-width: 640px) {
+  *, *::before, *::after {
+    max-width: 100vw;
+  }
+
   .container {
-    width: 92%;
-    padding: 0 0.5rem;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 1rem !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-grid, .skills-grid, .blog-grid, .projects-grid {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-card-wrapper, .code-card, .blog-card, .skill-card, .project-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   /* Compact Sleek Sticky Topbar */
