@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>uuina | ECT/ECVT Research & Automation Explorer</title>
-  <meta name="description" content="uuina 的个人主页与技术博客。主研究方向：过程层析成像（ECT/ECVT）信号处理与 3D 流型重构；兼修 AI Agent 辅助工具开发。">
+  <meta name="description" content="uuina 的个人主页与技术博客。主研究方向：过程层析成像（ECT/ECVT）技术与流场可视化应用。">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="style.css?v=4.0">
+  <link rel="stylesheet" href="style.css?v=5.0">
 </head>
 <body>
   <!-- Background Mesh Canvas -->
@@ -56,10 +56,10 @@
           <span>Process Tomography (ECT / ECVT) Researcher</span>
         </div>
         <h1 class="hero-title">
-          专注于 <span class="gradient-text">ECT/ECVT 过程层析成像</span> 与流型重构
+          专注于 <span class="gradient-text">ECT/ECVT 过程层析成像</span> 研究
         </h1>
         <p class="hero-description">
-          你好！我是 uuina，一名学生与科研探索者。我的**核心主研究项目是过程层析成像（ECT / ECVT）**——致力于电容信号解耦、气液两相流场三维重构与相分布计算；平时也会编写一些科研辅助小工具。
+          你好！我是 uuina，一名学生与科研探索者。我的**核心主项目是过程层析成像（ECT / ECVT）**——关注多相流无损检测、三维流型可视化与相含率计算；平时也会编写一些科研辅助小工具。
         </p>
 
         <div class="hero-stats">
@@ -69,11 +69,11 @@
           </div>
           <div class="stat-item">
             <span class="stat-value">3D Mesh</span>
-            <span class="stat-label">流型场体渲染</span>
+            <span class="stat-label">流场非接触检测</span>
           </div>
           <div class="stat-item">
             <span class="stat-value">28 Ch</span>
-            <span class="stat-label">电容质量检测</span>
+            <span class="stat-label">传感器信号解析</span>
           </div>
         </div>
 
@@ -87,7 +87,7 @@
         </div>
       </div>
 
-      <!-- Code / Technical Card -->
+      <!-- Technical Card -->
       <div class="hero-card-wrapper">
         <div class="code-card">
           <div class="code-card-header">
@@ -96,21 +96,18 @@
               <span class="dot yellow"></span>
               <span class="dot green"></span>
             </div>
-            <span class="term-title">ect_reconstruction.py</span>
+            <span class="term-title">process_tomography.py</span>
           </div>
           <div class="code-card-body">
-<pre><code><span class="code-comment"># ECT / ECVT Core Reconstruction Engine</span>
-<span class="code-keyword">import</span> pyvista <span class="code-keyword">as</span> pv
+<pre><code><span class="code-comment"># Process Tomography (ECT / ECVT) Framework</span>
+<span class="code-keyword">class</span> ProcessTomographyResearch:
+    <span class="code-keyword">def</span> __init__(self):
+        self.primary_focus = <span class="code-str">"ECT & ECVT"</span>
+        self.methodology = <span class="code-str">"Non-intrusive Measurement"</span>
+        self.application = <span class="code-str">"Multi-phase Flow Field Visualization"</span>
 
-<span class="code-keyword">class</span> ECVTReconstructor:
-    <span class="code-keyword">def</span> __init__(self, channels=28):
-        self.channels = channels
-        self.mesh_type = <span class="code-str">"3D Tetrahedral"</span>
-        self.project = <span class="code-str">"Cryogenic Fluid Flow Field"</span>
-
-    <span class="code-keyword">def</span> render_phase_distribution(self, C_data):
-        <span class="code-comment"># Reconstruct gas-liquid 3D volume</span>
-        <span class="code-keyword">return</span> pv.read(<span class="code-str">"reconstructed_flow.vtk"</span>)</code></pre>
+    <span class="code-keyword">def</span> get_summary(self):
+        <span class="code-keyword">return</span> <span class="code-str">"Focusing on safety, accuracy & 3D flow visualization"</span></code></pre>
           </div>
         </div>
       </div>
@@ -123,7 +120,7 @@
       <div class="section-header">
         <div class="subtitle">PRIMARY RESEARCH PROJECT</div>
         <h2>核心科研项目：过程层析成像 (ECT / ECVT)</h2>
-        <p>聚焦于电容过程层析成像（ECT）与三维电容过程层析成像（ECVT）技术攻关</p>
+        <p>聚焦于电容过程层析成像（ECT）与三维电容过程层析成像（ECVT）技术的研究与应用</p>
       </div>
 
       <div class="skills-grid">
@@ -132,8 +129,8 @@
           <div class="skill-icon">
             <i class="fa-solid fa-cubes"></i>
           </div>
-          <h3>三维流型重构 (3D Volume Rendering)</h3>
-          <p>基于 PyVista 与 VTK 驱动的四面体网格体渲染，实现管道内气液两相流（泡状流、弹状流、环状流）的三维非接触可视化重构。</p>
+          <h3>非接触式三维流场可视化</h3>
+          <p>无需侵入管道内部，利用传感器阵列获取介质电性分布，实现管道内多相流体（如气液两相）的三维空间非接触无损检测。</p>
         </div>
 
         <!-- Feature 2 -->
@@ -141,8 +138,8 @@
           <div class="skill-icon">
             <i class="fa-solid fa-wave-square"></i>
           </div>
-          <h3>28 通道电容微弱信号解耦</h3>
-          <p>针对极低信噪比与高信道耦合特性的 28 通道电容传感器阵列，建立电容归一化、噪点滤波与高精度质量检测。</p>
+          <h3>多通道电容信号采集与解析</h3>
+          <p>针对阵列电容微弱信号特征，建立高信噪比数据预处理与质量校验，保障测试过程的稳定可靠。</p>
         </div>
 
         <!-- Feature 3 -->
@@ -150,8 +147,8 @@
           <div class="skill-icon">
             <i class="fa-solid fa-chart-area"></i>
           </div>
-          <h3>相含率与质量流量计算引擎</h3>
-          <p>基于截面截相率计算与连续介电常数场映射（Continuous Field Map），准确计算管道截面气液相含率演化规律。</p>
+          <h3>相分布与流型变化规律研究</h3>
+          <p>分析管道截面相含率在不同运行工况下的动态演化，为工业流体传输与安全监测提供科学依据。</p>
         </div>
       </div>
     </div>
@@ -163,7 +160,7 @@
       <div class="section-header">
         <div class="subtitle">WRITING & NOTES</div>
         <h2>个人博客与技术笔记</h2>
-        <p>点击“阅读全文”即可直接在弹窗中阅读完整的技术探索笔记</p>
+        <p>点击下方卡片或“阅读全文”按钮即可查看文章概述与研究背景</p>
       </div>
 
       <div class="blog-grid">
@@ -173,14 +170,16 @@
             <div class="blog-meta">
               <span class="blog-tag">核心科研</span>
               <span>2026-07-28</span>
-              <span>· 6 分钟阅读</span>
+              <span>· 3 分钟阅读</span>
             </div>
-            <h3>过程层析成像 (ECT/ECVT) 三维流型重构算法与实验探索</h3>
-            <p>详细记录电容层析成像 (ECT/ECVT) 信号解耦、PyVista 三维四面体体渲染以及反问题求解算法的实验体会。</p>
+            <h3>过程层析成像 (ECT/ECVT) 技术概述与研究简述</h3>
+            <p>介绍过程层析成像 (ECT/ECVT) 的现实研究背景、非接触无损检测的技术优势以及课题的研究概述。</p>
           </div>
           <div class="blog-footer">
             <span>主项目笔记</span>
-            <span class="read-more-link">阅读全文 <i class="fa-solid fa-arrow-right"></i></span>
+            <button class="read-more-link" type="button" onclick="event.stopPropagation(); window.openArticle('ect-ecvt-research')" style="background:none; border:none; cursor:pointer;">
+              阅读全文 <i class="fa-solid fa-arrow-right"></i>
+            </button>
           </div>
         </div>
 
@@ -190,14 +189,16 @@
             <div class="blog-meta">
               <span class="blog-tag">AI Agent</span>
               <span>2026-07-26</span>
-              <span>· 5 分钟阅读</span>
+              <span>· 3 分钟阅读</span>
             </div>
-            <h3>从零了解 Model Context Protocol (MCP) 在科研中的应用</h3>
-            <p>探讨如何将 Anthropic 开源的 MCP 协议与学术绘图、数据检索及本地 Python 脚本相结合，打造科研小助手。</p>
+            <h3>Model Context Protocol (MCP) 在科研辅助中的探索</h3>
+            <p>探讨如何利用 Anthropic 开源的 MCP 协议与本地脚本结合，辅助学术绘图与数据规范校验。</p>
           </div>
           <div class="blog-footer">
             <span>辅助工具</span>
-            <span class="read-more-link">阅读全文 <i class="fa-solid fa-arrow-right"></i></span>
+            <button class="read-more-link" type="button" onclick="event.stopPropagation(); window.openArticle('mcp-guide')" style="background:none; border:none; cursor:pointer;">
+              阅读全文 <i class="fa-solid fa-arrow-right"></i>
+            </button>
           </div>
         </div>
 
@@ -207,14 +208,16 @@
             <div class="blog-meta">
               <span class="blog-tag">Origin 绘图</span>
               <span>2026-07-24</span>
-              <span>· 4 分钟阅读</span>
+              <span>· 2 分钟阅读</span>
             </div>
-            <h3>出版级 Origin 科研图表 StyleSpec v2 规范设计</h3>
-            <p>总结 IEEE 与 Nature 期刊对矢量图、DPI、色彩与字体的要求，以及如何通过 JSON 规范解决画图问题。</p>
+            <h3>学术图表 StyleSpec v2 规范设计概要</h3>
+            <p>总结学术期刊（如 IEEE、ACS）对矢量图与 DPI 的要求，以及基于 JSON 的排版规则选型。</p>
           </div>
           <div class="blog-footer">
             <span>辅助工具</span>
-            <span class="read-more-link">阅读全文 <i class="fa-solid fa-arrow-right"></i></span>
+            <button class="read-more-link" type="button" onclick="event.stopPropagation(); window.openArticle('stylespec-v2')" style="background:none; border:none; cursor:pointer;">
+              阅读全文 <i class="fa-solid fa-arrow-right"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -227,7 +230,7 @@
       <div class="section-header">
         <div class="subtitle">SECONDARY TOOLS</div>
         <h2>科研辅助小工具</h2>
-        <p>日常学习与科研过程中积累的小项目与自动化脚本</p>
+        <p>日常学习过程中积累的小项目与自动化脚本</p>
       </div>
 
       <div class="projects-grid">
@@ -341,12 +344,12 @@
     </div>
   </section>
 
-  <!-- Article Reader Modal -->
-  <div id="article-modal" class="modal-overlay">
+  <!-- Article Reader Modal (Fixed Direct Display Container) -->
+  <div id="article-modal" class="modal-overlay" style="display: none;">
     <div class="modal-card">
       <div class="modal-header">
         <span class="modal-title" id="modal-article-title">文章阅读</span>
-        <button class="btn-close-modal" onclick="window.closeArticle()">&times;</button>
+        <button class="btn-close-modal" type="button" onclick="window.closeArticle()">&times;</button>
       </div>
       <div class="modal-body" id="modal-article-content">
         <!-- Article content loaded dynamically -->
@@ -357,7 +360,7 @@
   <!-- Footer Section -->
   <footer class="footer-section">
     <div class="container footer-content">
-      <p>&copy; 2026 uuina. ECT/ECVT Researcher & Developer. Powered by Cloudflare Pages.</p>
+      <p>&copy; 2026 uuina. ECT/ECVT Researcher. Powered by Cloudflare Pages.</p>
       <div class="footer-links">
         <a href="https://github.com/uuina" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
       </div>

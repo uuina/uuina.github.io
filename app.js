@@ -1,71 +1,70 @@
 /* ==========================================================================
    uuina.github.io - Interactive Application Script
-   Handles: StyleSpec v2 Generator, Modal Article Reader, Scroll Highlighting
+   Handles: StyleSpec v2 Generator, Modal Article Reader (Non-confidential),
+   Direct DOM Display Toggle, Scroll Highlighting
    ========================================================================== */
 
-// Articles Data Store
+// Non-confidential Public Articles Data Store
 const articlesData = {
   'ect-ecvt-research': {
-    title: "过程层析成像 (ECT/ECVT) 三维流型重构算法与实验探索",
+    title: "过程层析成像 (ECT/ECVT) 技术概述与研究简述",
     content: `
-      <p>过程层析成像（Process Tomography，简称 PT）是现代多相流检测的核心技术。其中，<strong>电容层析成像 (ECT)</strong> 与 <strong>三维电容过程层析成像 (ECVT)</strong> 利用各相介质电导率/介电常数的差异，实现管内流场的非接触式可视化测量。</p>
+      <h4>一、 研究背景</h4>
+      <p>在能源、化工以及工业流体传输领域，管道内气液/气固等多相流体的实时分布检测至关重要。<strong>过程层析成像 (Process Tomography, PT)</strong> 技术作为一种先进的非接触式检测手段，能够在不干扰流体运动的前提下，获取管道内部截面及三维空间内的介质分布信息。</p>
       
-      <h4>核心研究与技术攻关</h4>
+      <h4>二、 技术优势</h4>
       <ul>
-        <li><strong>28 通道电容微弱信号处理</strong>：针对电容信号噪比低、信道间耦合强的问题，建立高精度电容归一化与数据质量检测。</li>
-        <li><strong>三维流型场重构 (PyVista)</strong>：采用 LBP、Landweber 及深度神经网络重构算法，实现气液两相流 2D/3D 四面体网格体渲染。</li>
-        <li><strong>相含率与质量流量计算</strong>：结合截面截相率与连续场映射，实时分析管内相分布演化规律。</li>
+        <li><strong>非接触与无损检测</strong>：传感器贴附或环绕在管道外壁，无需侵入管道内部，保证流场原始状态。</li>
+        <li><strong>高时间分辨率</strong>：响应速度极快，适用于捕捉高速暂态流型（如弹状流、泡状流等变化）。</li>
+        <li><strong>安全与低成本</strong>：相比射线类层析成像（如 CT），电容层析成像无辐射风险，设备维护与运行成本更低。</li>
       </ul>
 
-      <pre><code># ECT/ECVT Reconstruction Pipeline
-import numpy as np
-import pyvista as pv
-
-def reconstruct_volume(capacitance_data, sensitivity_matrix):
-    # Solve inverse problem: S * g = lambda
-    dielectric_distribution = solve_inverse_problem(capacitance_data, sensitivity_matrix)
-    grid = pv.UnstructuredGrid("mesh_tetrahedral.vtk")
-    grid.point_data["permittivity"] = dielectric_distribution
-    return grid</code></pre>
+      <h4>三、 研究简要内容</h4>
+      <p>本研究主要关注电容层析成像（ECT）与三维电容过程层析成像（ECVT）系统的基本原理应用与三维流型重构：</p>
+      <ul>
+        <li><strong>电容数据预处理</strong>：研究微弱电容信号的归一化与数据质量校验方法。</li>
+        <li><strong>三维可视化与相分布分析</strong>：探索流型场的三维空间呈现，分析管道内相含率在不同工况下的演化趋势。</li>
+      </ul>
     `
   },
   'mcp-guide': {
-    title: "从零了解 Model Context Protocol (MCP) 在科研中的应用",
+    title: "Model Context Protocol (MCP) 在科研辅助中的探索",
     content: `
-      <p>Model Context Protocol (MCP) 是由 Anthropic 提出的开源标准协议，旨在大模型（LLM）与本地数据、工具和系统之间建立安全、标准化的双向通信通道。</p>
+      <h4>一、 背景介绍</h4>
+      <p>Model Context Protocol (MCP) 是由 Anthropic 提出的开源协议，旨在为大语言模型（LLM）与本地开发工具、数据接口之间建立标准化的通信桥梁。</p>
       
-      <h4>为什么科研学习者需要 MCP？</h4>
-      <p>在传统的科研工作中，大模型虽然聪明，但“手脚受限”——它无法直接读取你的本地数据文件，也无法直接调用 OriginLab 画图或操控本地仿真工具。</p>
-      <p>通过编写简单的 Python MCP 服务端（Server），我们可以将以下功能包装为 Tool 暴露给大模型：</p>
+      <h4>二、 技术优势</h4>
       <ul>
-        <li><code>read_worksheet</code>：直接读取实验测得的数据表格。</li>
-        <li><code>create_graph</code>：传入 StyleSpec JSON 规范在本地 OriginLab 中绘制 600 DPI 出版矢量图。</li>
-        <li><code>fit_curve</code>：自动进行多项式拟合或动力学方程拟合。</li>
+        <li><strong>标准化接口</strong>：统一的 Tool 与 Resource 协议规范。</li>
+        <li><strong>本地安全受控</strong>：数据在本地完成解析，避免敏感信息外流。</li>
       </ul>
+
+      <h4>三、 简要实践内容</h4>
+      <p>尝试利用 Python 编写简易 MCP 服务端，协助完成本地学术图表格式校验与自动化数据整理。</p>
     `
   },
   'stylespec-v2': {
-    title: "出版级 Origin 科研图表 StyleSpec v2 规范设计",
+    title: "学术图表 StyleSpec v2 规范设计概要",
     content: `
-      <p>学术期刊（如 IEEE Transactions、Nature、ACS 等）对论文图表有极其严格的格式规定，包括单双栏尺寸限制（IEEE 单栏 8.5cm）、字体族、线条粗细及色彩对比度。</p>
+      <h4>一、 背景介绍</h4>
+      <p>不同学术期刊（如 IEEE、ACS 等）对论文插图有严格的尺寸、DPI 与字体规范。手动调整往往耗时耗力。</p>
       
-      <h4>StyleSpec v2 的设计理念</h4>
-      <p>StyleSpec v2 是一种基于 JSON 的领域专用配置规范（DSL）。它的核心目的是让自然语言或者 AI Agent 的输出拥有确定的、百分之百可预测的样式。</p>
-    `
-  },
-  'cloudflare-pages': {
-    title: "学生党免费建站指南：GitHub Pages + Cloudflare Pages 架构避坑",
-    content: `
-      <p>作为学生或者独立开发者，搭建个人主页和博客最理想的状态是：<strong>零成本、速度快、维护简单、域名逼格高</strong>。</p>
-      <p>通过 GitHub Pages + Cloudflare Pages 架构，配合 CNAME 拉平技术，实现全自动免费托管。</p>
+      <h4>二、 技术优势</h4>
+      <p>通过基于 JSON 的声明式规则，将排版要求参数化，确保输出的图表一次性满足期刊出版要求。</p>
+
+      <h4>三、 简要内容</h4>
+      <p>规范包含了常见的单双栏尺寸预设、色盲友好调色板选型以及矢量格式导出约束。</p>
     `
   }
 };
 
-// Global Article Modal Functions (Attached to window for inline HTML onclick safety)
+// Global Article Modal Functions (Direct Inline Display Control for absolute reliability)
 window.openArticle = function(id) {
   const article = articlesData[id];
-  if (!article) return;
+  if (!article) {
+    alert("文章加载中，请稍后再试");
+    return;
+  }
 
   const modal = document.getElementById('article-modal');
   const modalTitle = document.getElementById('modal-article-title');
@@ -74,14 +73,24 @@ window.openArticle = function(id) {
   if (modal && modalTitle && modalContent) {
     modalTitle.textContent = article.title;
     modalContent.innerHTML = article.content;
+    
+    // Direct DOM display toggle
+    modal.style.display = 'flex';
+    modal.style.opacity = '1';
+    modal.style.pointerEvents = 'auto';
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+  } else {
+    alert(article.title + "\n\n" + article.content.replace(/<[^>]+>/g, ''));
   }
 };
 
 window.closeArticle = function() {
   const modal = document.getElementById('article-modal');
   if (modal) {
+    modal.style.display = 'none';
+    modal.style.opacity = '0';
+    modal.style.pointerEvents = 'none';
     modal.classList.remove('active');
     document.body.style.overflow = '';
   }
@@ -103,7 +112,7 @@ document.addEventListener('keydown', (e) => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Bind click listeners dynamically as fallback
+  // Bind click listeners to all read buttons and cards
   document.querySelectorAll('.blog-card').forEach(card => {
     card.addEventListener('click', function(e) {
       const articleId = this.getAttribute('data-article-id');
