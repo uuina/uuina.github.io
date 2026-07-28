@@ -36,7 +36,6 @@
         <a href="#ect-research" class="nav-link">核心科研 (ECT/ECVT)</a>
         <a href="#blog" class="nav-link">博客文章</a>
         <a href="#tools" class="nav-link">辅助工具</a>
-        <a href="#demo-spec" class="nav-link">StyleSpec 工具</a>
       </nav>
 
       <div class="nav-actions">
@@ -165,7 +164,7 @@
 
       <div class="blog-grid">
         <!-- Article 1 -->
-        <div class="blog-card" data-article-id="ect-ecvt-research" onclick="window.openArticle('ect-ecvt-research')">
+        <div class="blog-card" data-article-id="ect-ecvt-research">
           <div>
             <div class="blog-meta">
               <span class="blog-tag">核心科研</span>
@@ -177,14 +176,14 @@
           </div>
           <div class="blog-footer">
             <span>主项目笔记</span>
-            <button class="read-more-link" type="button" onclick="event.stopPropagation(); window.openArticle('ect-ecvt-research')" style="background:none; border:none; cursor:pointer;">
+            <button class="read-more-link" type="button" style="background:none; border:none; cursor:pointer;">
               阅读全文 <i class="fa-solid fa-arrow-right"></i>
             </button>
           </div>
         </div>
 
         <!-- Article 2 -->
-        <div class="blog-card" data-article-id="mcp-guide" onclick="window.openArticle('mcp-guide')">
+        <div class="blog-card" data-article-id="mcp-guide">
           <div>
             <div class="blog-meta">
               <span class="blog-tag">AI Agent</span>
@@ -196,26 +195,7 @@
           </div>
           <div class="blog-footer">
             <span>辅助工具</span>
-            <button class="read-more-link" type="button" onclick="event.stopPropagation(); window.openArticle('mcp-guide')" style="background:none; border:none; cursor:pointer;">
-              阅读全文 <i class="fa-solid fa-arrow-right"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- Article 3 -->
-        <div class="blog-card" data-article-id="stylespec-v2" onclick="window.openArticle('stylespec-v2')">
-          <div>
-            <div class="blog-meta">
-              <span class="blog-tag">Origin 绘图</span>
-              <span>2026-07-24</span>
-              <span>· 2 分钟阅读</span>
-            </div>
-            <h3>学术图表 StyleSpec v2 规范设计概要</h3>
-            <p>总结学术期刊（如 IEEE、ACS）对矢量图与 DPI 的要求，以及基于 JSON 的排版规则选型。</p>
-          </div>
-          <div class="blog-footer">
-            <span>辅助工具</span>
-            <button class="read-more-link" type="button" onclick="event.stopPropagation(); window.openArticle('stylespec-v2')" style="background:none; border:none; cursor:pointer;">
+            <button class="read-more-link" type="button" style="background:none; border:none; cursor:pointer;">
               阅读全文 <i class="fa-solid fa-arrow-right"></i>
             </button>
           </div>
@@ -267,82 +247,7 @@
     </div>
   </section>
 
-  <!-- Interactive Demo Section (StyleSpec) -->
-  <section id="demo-spec" class="demo-section">
-    <div class="container">
-      <div class="section-header">
-        <div class="subtitle">LIVE GENERATOR</div>
-        <h2>StyleSpec v2 在线配置生成器</h2>
-        <p>体验可收敛到 Origin 绘图引擎的标准 JSON 规则协议</p>
-      </div>
 
-      <div class="demo-card">
-        <div class="demo-grid">
-          <!-- Controls Panel -->
-          <div class="demo-controls">
-            <h3><i class="fa-solid fa-sliders"></i> 图形参数控制台</h3>
-
-            <div class="control-group">
-              <label for="preset-select">绘图预设 (Preset)</label>
-              <select id="preset-select" class="form-select">
-                <option value="ieee_standard">IEEE Standard (单栏)</option>
-                <option value="nature_full">Nature Publishing (全栏)</option>
-                <option value="acs_two_column">ACS Two-Column</option>
-              </select>
-            </div>
-
-            <div class="control-group">
-              <label for="type-select">图表类型 (Figure Type)</label>
-              <select id="type-select" class="form-select">
-                <option value="scatter_line">散点折线图 (Scatter & Line)</option>
-                <option value="double_y">双 Y 轴对比图 (Double-Y)</option>
-                <option value="bar_chart">柱状误差图 (Bar & Error)</option>
-              </select>
-            </div>
-
-            <div class="control-group">
-              <label for="palette-select">调色板 (Palette)</label>
-              <select id="palette-select" class="form-select">
-                <option value="okabe-ito">Okabe-Ito (色盲友好)</option>
-                <option value="grayscale">出版级纯灰度 (Grayscale)</option>
-                <option value="academic-blue">经典学术蓝 (Academic Blue)</option>
-              </select>
-            </div>
-
-            <div class="control-group">
-              <label for="font-select">字体族 (Font Family)</label>
-              <select id="font-select" class="form-select">
-                <option value="Arial">Arial (通用推荐)</option>
-                <option value="Times New Roman">Times New Roman (经典学术)</option>
-                <option value="Helvetica">Helvetica</option>
-              </select>
-            </div>
-
-            <div class="control-group">
-              <label for="x-title">X 轴标题</label>
-              <input type="text" id="x-title" class="form-input" value="Time t (s)">
-            </div>
-
-            <div class="control-group">
-              <label for="y1-title">Y1 轴标题</label>
-              <input type="text" id="y1-title" class="form-input" value="Mass Flow Rate (kg/s)">
-            </div>
-          </div>
-
-          <!-- Code Preview Panel -->
-          <div class="demo-preview">
-            <div class="preview-header">
-              <span><i class="fa-solid fa-code"></i> style_spec_v2.json</span>
-              <button id="btn-copy-json" class="btn-copy">
-                <i class="fa-regular fa-copy"></i> 复制 JSON
-              </button>
-            </div>
-            <pre class="preview-body"><code id="json-code-block">{}</code></pre>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Article Reader Modal (Fixed Direct Display Container) -->
   <div id="article-modal" class="modal-overlay" style="display: none;">

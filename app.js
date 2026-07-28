@@ -42,19 +42,6 @@ const articlesData = {
       <h4>三、 简要实践内容</h4>
       <p>尝试利用 Python 编写简易 MCP 服务端，协助完成本地学术图表格式校验与自动化数据整理。</p>
     `
-  },
-  'stylespec-v2': {
-    title: "学术图表 StyleSpec v2 规范设计概要",
-    content: `
-      <h4>一、 背景介绍</h4>
-      <p>不同学术期刊（如 IEEE、ACS 等）对论文插图有严格的尺寸、DPI 与字体规范。手动调整往往耗时耗力。</p>
-      
-      <h4>二、 技术优势</h4>
-      <p>通过基于 JSON 的声明式规则，将排版要求参数化，确保输出的图表一次性满足期刊出版要求。</p>
-
-      <h4>三、 简要内容</h4>
-      <p>规范包含了常见的单双栏尺寸预设、色盲友好调色板选型以及矢量格式导出约束。</p>
-    `
   }
 };
 
@@ -121,89 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  // Elements for StyleSpec Generator
-  const presetSelect = document.getElementById('preset-select');
-  const typeSelect = document.getElementById('type-select');
-  const paletteSelect = document.getElementById('palette-select');
-  const fontSelect = document.getElementById('font-select');
-  const xTitleInput = document.getElementById('x-title');
-  const y1TitleInput = document.getElementById('y1-title');
-  const jsonCodeBlock = document.getElementById('json-code-block');
-  const btnCopyJson = document.getElementById('btn-copy-json');
-
-  // Function to build and update StyleSpec JSON preview
-  function updateStyleSpecPreview() {
-    if (!presetSelect) return;
-
-    const preset = presetSelect.value;
-    const figureType = typeSelect.value;
-    const palette = paletteSelect.value;
-    const font = fontSelect.value;
-    const xTitle = xTitleInput.value.trim() || 't (s)';
-    const y1Title = y1TitleInput.value.trim() || 'F (N)';
-
-    const isGrayscale = palette === 'grayscale';
-    const activePalette = isGrayscale ? 'okabe-ito' : palette;
-
-    const spec = {
-      schema_version: "2.0",
-      preset: preset,
-      figure: {
-        type: figureType,
-        size_cm: [8.5, 6.5],
-        color_mode: isGrayscale ? "grayscale" : "color",
-        palette: activePalette
-      },
-      axes: {
-        x: { title: xTitle, major_step: 5 },
-        y: { title: y1Title, major_step: 1.0 }
-      },
-      plots: [
-        { axis: "y", symbol: "circle", legend: "Exp. Data" },
-        { axis: "y", line_style: "solid", width: 1.8, legend: "Fit Model" }
-      ],
-      fonts: { family: font, axis_title_pt: 10, tick_pt: 9 },
-      export: { project: "opju", formats: ["png", "pdf"], dpi: 600 }
-    };
-
-    if (jsonCodeBlock) {
-      jsonCodeBlock.textContent = JSON.stringify(spec, null, 2);
-    }
-  }
-
-  // Event Listeners for Controls
-  const inputs = [presetSelect, typeSelect, paletteSelect, fontSelect, xTitleInput, y1TitleInput];
-  inputs.forEach(input => {
-    if (input) {
-      input.addEventListener('change', updateStyleSpecPreview);
-      input.addEventListener('input', updateStyleSpecPreview);
-    }
-  });
-
-  // Initial Spec Render
-  updateStyleSpecPreview();
-
-  // Copy JSON to Clipboard
-  if (btnCopyJson && jsonCodeBlock) {
-    btnCopyJson.addEventListener('click', () => {
-      const textToCopy = jsonCodeBlock.textContent;
-      navigator.clipboard.writeText(textToCopy).then(() => {
-        const originalText = btnCopyJson.innerHTML;
-        btnCopyJson.innerHTML = '<i class="fa-solid fa-check"></i> 已复制！';
-        btnCopyJson.style.background = 'rgba(99, 102, 241, 0.2)';
-        btnCopyJson.style.color = '#818cf8';
-        
-        setTimeout(() => {
-          btnCopyJson.innerHTML = originalText;
-          btnCopyJson.style.background = '';
-          btnCopyJson.style.color = '';
-        }, 2000);
-      }).catch(err => {
-        console.error('Failed to copy: ', err);
-      });
-    });
-  }
 
   // Smooth Active Nav Highlighting on Scroll
   const sections = document.querySelectorAll('section');
