@@ -799,13 +799,16 @@ body {
   inset: 0;
   z-index: 200;
   background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   pointer-events: none;
   transition: var(--transition);
+  padding: 1rem;
+  box-sizing: border-box;
 }
 
 .modal-overlay.active {
@@ -814,7 +817,7 @@ body {
 }
 
 .modal-card {
-  width: 90%;
+  width: 100%;
   max-width: 680px;
   max-height: 85vh;
   background: var(--bg-surface);
@@ -824,6 +827,7 @@ body {
   flex-direction: column;
   overflow: hidden;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+  box-sizing: border-box;
 }
 
 .modal-header {
@@ -857,9 +861,13 @@ body {
 .modal-body {
   padding: 1.6rem;
   overflow-y: auto;
+  overflow-x: hidden;
   color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.7;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .modal-body h4 {
@@ -880,6 +888,11 @@ body {
 /* Markdown Rendering Styles */
 .markdown-body {
   color: var(--text-secondary);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4 {
@@ -907,14 +920,26 @@ body {
   padding: 1rem;
   border-radius: var(--radius-md);
   overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
   border: 1px solid var(--border-color);
   margin-bottom: 1.2rem;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .markdown-body pre code {
   background: none;
   padding: 0;
   color: var(--text-primary);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
 }
 
 .markdown-body blockquote {
@@ -935,10 +960,13 @@ body {
 }
 
 /* Utterances Comment Container */
-.utterances-container {
+.utterances-container, .utterances, .utterances-frame {
   margin-top: 2rem;
-  padding-top: 2rem;
+  padding-top: 1rem;
   border-top: 1px solid var(--border-color);
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 /* Footer Section */
@@ -1061,17 +1089,19 @@ body {
     display: none; /* Shown inside Drawer footer on mobile */
   }
 
-  /* Modal Fullscreen Optimization on Mobile */
+  /* Modal Fullscreen & Fluid Window Adaptability on Mobile */
   .modal-overlay {
-    align-items: flex-end; /* Bottom Sheet Feel on Mobile */
+    align-items: flex-end;
+    padding: 0;
   }
 
   .modal-card {
-    width: 100vw;
-    height: 100vh;
-    max-height: 100vh;
-    border-radius: 0;
-    border: none;
+    width: 100vw !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    border-radius: 0 !important;
+    border: none !important;
+    box-sizing: border-box !important;
   }
 
   .modal-header {
@@ -1080,6 +1110,7 @@ body {
     top: 0;
     background: var(--bg-surface);
     z-index: 10;
+    border-bottom: 1px solid var(--border-color);
   }
 
   .modal-title {
@@ -1090,6 +1121,9 @@ body {
     padding: 1.2rem 1.1rem 3rem;
     font-size: 0.92rem;
     line-height: 1.7;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   /* Footer Mobile Layout */
