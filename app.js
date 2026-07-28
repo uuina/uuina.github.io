@@ -5,6 +5,30 @@
 
 // Articles Data Store
 const articlesData = {
+  'ect-ecvt-research': {
+    title: "过程层析成像 (ECT/ECVT) 三维流型重构算法与实验探索",
+    content: `
+      <p>过程层析成像（Process Tomography，简称 PT）是现代多相流检测的核心技术。其中，<strong>电容层析成像 (ECT)</strong> 与 <strong>三维电容过程层析成像 (ECVT)</strong> 利用各相介质电导率/介电常数的差异，实现管内流场的非接触式可视化测量。</p>
+      
+      <h4>核心研究与技术攻关</h4>
+      <ul>
+        <li><strong>28 通道电容微弱信号处理</strong>：针对电容信号噪比低、信道间耦合强的问题，建立高精度电容归一化与数据质量检测。</li>
+        <li><strong>三维流型场重构 (PyVista)</strong>：采用 LBP、Landweber 及深度神经网络重构算法，实现气液两相流 2D/3D 四面体网格体渲染。</li>
+        <li><strong>相含率与质量流量计算</strong>：结合截面截相率与连续场映射，实时分析管内相分布演化规律。</li>
+      </ul>
+
+      <pre><code># ECT/ECVT Reconstruction Pipeline
+import numpy as np
+import pyvista as pv
+
+def reconstruct_volume(capacitance_data, sensitivity_matrix):
+    # Solve inverse problem: S * g = lambda
+    dielectric_distribution = solve_inverse_problem(capacitance_data, sensitivity_matrix)
+    grid = pv.UnstructuredGrid("mesh_tetrahedral.vtk")
+    grid.point_data["permittivity"] = dielectric_distribution
+    return grid</code></pre>
+    `
+  },
   'mcp-guide': {
     title: "从零了解 Model Context Protocol (MCP) 在科研中的应用",
     content: `
@@ -18,11 +42,6 @@ const articlesData = {
         <li><code>create_graph</code>：传入 StyleSpec JSON 规范在本地 OriginLab 中绘制 600 DPI 出版矢量图。</li>
         <li><code>fit_curve</code>：自动进行多项式拟合或动力学方程拟合。</li>
       </ul>
-
-      <h4>核心架构示意</h4>
-      <p><code>Claude/ChatGPT Client <---> MCP Protocol <---> Local Python Server <---> OriginLab / Datasets</code></p>
-      
-      <p>这种架构极大释放了 AI 的生产力，将重复画图与格式微调的时间缩短了 90% 以上。</p>
     `
   },
   'stylespec-v2': {
@@ -32,46 +51,19 @@ const articlesData = {
       
       <h4>StyleSpec v2 的设计理念</h4>
       <p>StyleSpec v2 是一种基于 JSON 的领域专用配置规范（DSL）。它的核心目的是让自然语言或者 AI Agent 的输出拥有确定的、百分之百可预测的样式。</p>
-      
-      <pre><code>{
-  "schema_version": "2.0",
-  "preset": "ieee_standard",
-  "figure": { "size_cm": [8.5, 6.5], "dpi": 600 },
-  "axes": { "x": { "title": "Time t (s)" }, "y": { "title": "Voltage (V)" } }
-}</code></pre>
-      
-      <h4>关键规则规范：</h4>
-      <ul>
-        <li><strong>色盲友好配色</strong>：默认选用 Okabe-Ito 配色，避免纯红纯绿对比。</li>
-        <li><strong>字体收敛</strong>：主标题与刻度字体收敛至 Arial 或 Times New Roman。</li>
-        <li><strong>矢量可编辑导出</strong>：直接生成 OPJU 原生工程，方便后续微调。</li>
-      </ul>
     `
   },
   'cloudflare-pages': {
     title: "学生党免费建站指南：GitHub Pages + Cloudflare Pages 架构避坑",
     content: `
       <p>作为学生或者独立开发者，搭建个人主页和博客最理想的状态是：<strong>零成本、速度快、维护简单、域名逼格高</strong>。</p>
-      
-      <h4>架构设计（全免费方案）</h4>
-      <ul>
-        <li><strong>代码托管</strong>：GitHub 仓库（版本控制 + 开源）。</li>
-        <li><strong>全球 CDN 静态托管</strong>：Cloudflare Pages（无限带宽、无限请求、全球加速）。</li>
-        <li><strong>自定义域名</strong>：通过 DNS 绑定个人域名（如 <code>hnnilovey.me</code>）。</li>
-      </ul>
-      
-      <h4>踩坑经验总结：Host Error 522 怎么破？</h4>
-      <p>在绑定自定义域名时，很容易遇到 Cloudflare 抛出 522 超时错误。根本原因通常有两个：</p>
-      <ol>
-        <li>DNS 记录里残留了占位测试 IP（如 <code>192.0.2.1</code>）。把 A 记录删掉，改为指向 <code>your-app.pages.dev</code> 的 <strong>CNAME 记录</strong>。</li>
-        <li>Cloudflare 会提示“CNAME 记录不能位于区域顶级”，直接确认即可，这就是 Cloudflare 强大的 <strong>CNAME Flattening（CNAME 拉平）</strong> 黑科技。</li>
-      </ol>
+      <p>通过 GitHub Pages + Cloudflare Pages 架构，配合 CNAME 拉平技术，实现全自动免费托管。</p>
     `
   }
 };
 
-// Global Article Modal Functions
-function openArticle(id) {
+// Global Article Modal Functions (Attached to window for inline HTML onclick safety)
+window.openArticle = function(id) {
   const article = articlesData[id];
   if (!article) return;
 
@@ -79,34 +71,48 @@ function openArticle(id) {
   const modalTitle = document.getElementById('modal-article-title');
   const modalContent = document.getElementById('modal-article-content');
 
-  modalTitle.textContent = article.title;
-  modalContent.innerHTML = article.content;
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
+  if (modal && modalTitle && modalContent) {
+    modalTitle.textContent = article.title;
+    modalContent.innerHTML = article.content;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+};
 
-function closeArticle() {
+window.closeArticle = function() {
   const modal = document.getElementById('article-modal');
-  modal.classList.remove('active');
-  document.body.style.overflow = '';
-}
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+};
 
 // Close Modal on Overlay Click
 document.addEventListener('click', (e) => {
   const modal = document.getElementById('article-modal');
   if (e.target === modal) {
-    closeArticle();
+    window.closeArticle();
   }
 });
 
 // ESC Key to close Modal
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
-    closeArticle();
+    window.closeArticle();
   }
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Bind click listeners dynamically as fallback
+  document.querySelectorAll('.blog-card').forEach(card => {
+    card.addEventListener('click', function(e) {
+      const articleId = this.getAttribute('data-article-id');
+      if (articleId) {
+        window.openArticle(articleId);
+      }
+    });
+  });
+
   // Elements for StyleSpec Generator
   const presetSelect = document.getElementById('preset-select');
   const typeSelect = document.getElementById('type-select');
@@ -152,7 +158,9 @@ document.addEventListener('DOMContentLoaded', () => {
       export: { project: "opju", formats: ["png", "pdf"], dpi: 600 }
     };
 
-    jsonCodeBlock.textContent = JSON.stringify(spec, null, 2);
+    if (jsonCodeBlock) {
+      jsonCodeBlock.textContent = JSON.stringify(spec, null, 2);
+    }
   }
 
   // Event Listeners for Controls
@@ -168,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateStyleSpecPreview();
 
   // Copy JSON to Clipboard
-  if (btnCopyJson) {
+  if (btnCopyJson && jsonCodeBlock) {
     btnCopyJson.addEventListener('click', () => {
       const textToCopy = jsonCodeBlock.textContent;
       navigator.clipboard.writeText(textToCopy).then(() => {

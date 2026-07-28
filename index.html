@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>uuina | Student, AI & Automation Explorer</title>
-  <meta name="description" content="uuina 的个人技术主页与学习博客。专注于 AI Agent 技能规则、科研自动化工具、StyleSpec 绘图规范与过程层析成像。">
+  <title>uuina | ECT/ECVT Research & Automation Explorer</title>
+  <meta name="description" content="uuina 的个人主页与技术博客。主研究方向：过程层析成像（ECT/ECVT）信号处理与 3D 流型重构；兼修 AI Agent 辅助工具开发。">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Custom Styles -->
-  <link rel="stylesheet" href="style.css?v=3.0">
+  <link rel="stylesheet" href="style.css?v=4.0">
 </head>
 <body>
   <!-- Background Mesh Canvas -->
@@ -23,20 +23,20 @@
     <div class="bg-grid"></div>
   </div>
 
-  <!-- Navigation Bar (Linear / Vercel Style) -->
+  <!-- Navigation Bar -->
   <header class="navbar">
     <div class="nav-container">
       <a href="#" class="brand">
-        <span class="brand-badge"><i class="fa-solid fa-graduation-cap"></i></span>
+        <span class="brand-badge"><i class="fa-solid fa-cubes"></i></span>
         <span class="brand-text">uuina<span class="dot">.</span>space</span>
       </a>
 
       <nav class="nav-links">
         <a href="#about" class="nav-link active">关于我</a>
+        <a href="#ect-research" class="nav-link">核心科研 (ECT/ECVT)</a>
         <a href="#blog" class="nav-link">博客文章</a>
-        <a href="#skills" class="nav-link">研究探索</a>
+        <a href="#tools" class="nav-link">辅助工具</a>
         <a href="#demo-spec" class="nav-link">StyleSpec 工具</a>
-        <a href="#projects" class="nav-link">开源项目</a>
       </nav>
 
       <div class="nav-actions">
@@ -53,41 +53,41 @@
       <div class="hero-content">
         <div class="hero-tag">
           <span class="pulse-dot"></span>
-          <span>Student & AI Engineering Explorer</span>
+          <span>Process Tomography (ECT / ECVT) Researcher</span>
         </div>
         <h1 class="hero-title">
-          记录学习、思考与 <span class="gradient-text">AI 自动化实践</span>
+          专注于 <span class="gradient-text">ECT/ECVT 过程层析成像</span> 与流型重构
         </h1>
         <p class="hero-description">
-          你好！我是 uuina，一名对 AI Agent 架构、Model Context Protocol (MCP) 协议、出版级科研自动绘图及工程自动化充满热情的学生与开发者。
+          你好！我是 uuina，一名学生与科研探索者。我的**核心主研究项目是过程层析成像（ECT / ECVT）**——致力于电容信号解耦、气液两相流场三维重构与相分布计算；平时也会编写一些科研辅助小工具。
         </p>
 
         <div class="hero-stats">
           <div class="stat-item">
-            <span class="stat-value">Student</span>
-            <span class="stat-label">学习与研究者</span>
+            <span class="stat-value">ECT / ECVT</span>
+            <span class="stat-label">主攻科研方向</span>
           </div>
           <div class="stat-item">
-            <span class="stat-value">69+</span>
-            <span class="stat-label">Agent 规则实践</span>
+            <span class="stat-value">3D Mesh</span>
+            <span class="stat-label">流型场体渲染</span>
           </div>
           <div class="stat-item">
-            <span class="stat-value">MCP</span>
-            <span class="stat-label">开源协议集成</span>
+            <span class="stat-value">28 Ch</span>
+            <span class="stat-label">电容质量检测</span>
           </div>
         </div>
 
         <div class="hero-btns">
-          <a href="#blog" class="btn-primary">
-            <i class="fa-regular fa-newspaper"></i> 阅读技术博客
+          <a href="#ect-research" class="btn-primary">
+            <i class="fa-solid fa-cube"></i> 查看 ECT/ECVT 核心科研
           </a>
-          <a href="#projects" class="btn-secondary">
-            <i class="fa-solid fa-code"></i> 查看开源小工具
+          <a href="#blog" class="btn-secondary">
+            <i class="fa-regular fa-newspaper"></i> 阅读技术博客
           </a>
         </div>
       </div>
 
-      <!-- Minimal Code Window -->
+      <!-- Code / Technical Card -->
       <div class="hero-card-wrapper">
         <div class="code-card">
           <div class="code-card-header">
@@ -96,23 +96,62 @@
               <span class="dot yellow"></span>
               <span class="dot green"></span>
             </div>
-            <span class="term-title">student_profile.py</span>
+            <span class="term-title">ect_reconstruction.py</span>
           </div>
           <div class="code-card-body">
-<pre><code><span class="code-comment"># Student Profile & Research Stack</span>
-<span class="code-keyword">class</span> StudentDeveloper:
-    <span class="code-keyword">def</span> __init__(self):
-        self.name = <span class="code-str">"uuina"</span>
-        self.role = <span class="code-str">"Student & Learner"</span>
-        self.interests = [
-            <span class="code-str">"Model Context Protocol"</span>,
-            <span class="code-str">"Scientific Plotting (Origin)"</span>,
-            <span class="code-str">"Process Tomography (ECT)"</span>
-        ]
+<pre><code><span class="code-comment"># ECT / ECVT Core Reconstruction Engine</span>
+<span class="code-keyword">import</span> pyvista <span class="code-keyword">as</span> pv
 
-    <span class="code-keyword">def</span> status(self):
-        <span class="code-keyword">return</span> <span class="code-str">"Always Learning & Building ✨"</span></code></pre>
+<span class="code-keyword">class</span> ECVTReconstructor:
+    <span class="code-keyword">def</span> __init__(self, channels=28):
+        self.channels = channels
+        self.mesh_type = <span class="code-str">"3D Tetrahedral"</span>
+        self.project = <span class="code-str">"Cryogenic Fluid Flow Field"</span>
+
+    <span class="code-keyword">def</span> render_phase_distribution(self, C_data):
+        <span class="code-comment"># Reconstruct gas-liquid 3D volume</span>
+        <span class="code-keyword">return</span> pv.read(<span class="code-str">"reconstructed_flow.vtk"</span>)</code></pre>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Core Research Section: ECT & ECVT -->
+  <section id="ect-research" class="skills-section" style="background: rgba(255, 255, 255, 0.01); border-y: 1px solid var(--border-color);">
+    <div class="container">
+      <div class="section-header">
+        <div class="subtitle">PRIMARY RESEARCH PROJECT</div>
+        <h2>核心科研项目：过程层析成像 (ECT / ECVT)</h2>
+        <p>聚焦于电容过程层析成像（ECT）与三维电容过程层析成像（ECVT）技术攻关</p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Feature 1 -->
+        <div class="skill-card" style="border-color: var(--border-hover);">
+          <div class="skill-icon">
+            <i class="fa-solid fa-cubes"></i>
+          </div>
+          <h3>三维流型重构 (3D Volume Rendering)</h3>
+          <p>基于 PyVista 与 VTK 驱动的四面体网格体渲染，实现管道内气液两相流（泡状流、弹状流、环状流）的三维非接触可视化重构。</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="skill-card" style="border-color: var(--border-hover);">
+          <div class="skill-icon">
+            <i class="fa-solid fa-wave-square"></i>
+          </div>
+          <h3>28 通道电容微弱信号解耦</h3>
+          <p>针对极低信噪比与高信道耦合特性的 28 通道电容传感器阵列，建立电容归一化、噪点滤波与高精度质量检测。</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="skill-card" style="border-color: var(--border-hover);">
+          <div class="skill-icon">
+            <i class="fa-solid fa-chart-area"></i>
+          </div>
+          <h3>相含率与质量流量计算引擎</h3>
+          <p>基于截面截相率计算与连续介电常数场映射（Continuous Field Map），准确计算管道截面气液相含率演化规律。</p>
         </div>
       </div>
     </div>
@@ -124,29 +163,46 @@
       <div class="section-header">
         <div class="subtitle">WRITING & NOTES</div>
         <h2>个人博客与技术笔记</h2>
-        <p>记录关于 AI 智能体应用、学术绘图规范以及自动化工程的学习思考</p>
+        <p>点击“阅读全文”即可直接在弹窗中阅读完整的技术探索笔记</p>
       </div>
 
       <div class="blog-grid">
         <!-- Article 1 -->
-        <div class="blog-card" onclick="openArticle('mcp-guide')">
+        <div class="blog-card" data-article-id="ect-ecvt-research" onclick="window.openArticle('ect-ecvt-research')">
           <div>
             <div class="blog-meta">
-              <span class="blog-tag">AI Agent</span>
+              <span class="blog-tag">核心科研</span>
               <span>2026-07-28</span>
-              <span>· 5 分钟阅读</span>
+              <span>· 6 分钟阅读</span>
             </div>
-            <h3>从零了解 Model Context Protocol (MCP) 在科研中的应用</h3>
-            <p>探讨如何将 Anthropic 开源的 MCP 协议与学术绘图、数据检索及本地 Python 脚本相结合，打造个人智能科研助手。</p>
+            <h3>过程层析成像 (ECT/ECVT) 三维流型重构算法与实验探索</h3>
+            <p>详细记录电容层析成像 (ECT/ECVT) 信号解耦、PyVista 三维四面体体渲染以及反问题求解算法的实验体会。</p>
           </div>
           <div class="blog-footer">
-            <span>技术思考</span>
+            <span>主项目笔记</span>
             <span class="read-more-link">阅读全文 <i class="fa-solid fa-arrow-right"></i></span>
           </div>
         </div>
 
         <!-- Article 2 -->
-        <div class="blog-card" onclick="openArticle('stylespec-v2')">
+        <div class="blog-card" data-article-id="mcp-guide" onclick="window.openArticle('mcp-guide')">
+          <div>
+            <div class="blog-meta">
+              <span class="blog-tag">AI Agent</span>
+              <span>2026-07-26</span>
+              <span>· 5 分钟阅读</span>
+            </div>
+            <h3>从零了解 Model Context Protocol (MCP) 在科研中的应用</h3>
+            <p>探讨如何将 Anthropic 开源的 MCP 协议与学术绘图、数据检索及本地 Python 脚本相结合，打造科研小助手。</p>
+          </div>
+          <div class="blog-footer">
+            <span>辅助工具</span>
+            <span class="read-more-link">阅读全文 <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <!-- Article 3 -->
+        <div class="blog-card" data-article-id="stylespec-v2" onclick="window.openArticle('stylespec-v2')">
           <div>
             <div class="blog-meta">
               <span class="blog-tag">Origin 绘图</span>
@@ -154,27 +210,10 @@
               <span>· 4 分钟阅读</span>
             </div>
             <h3>出版级 Origin 科研图表 StyleSpec v2 规范设计</h3>
-            <p>总结 IEEE 与 Nature 期刊对矢量图、DPI、色彩与字体的严格要求，以及如何通过标准化 JSON 校验解决画图难题。</p>
+            <p>总结 IEEE 与 Nature 期刊对矢量图、DPI、色彩与字体的要求，以及如何通过 JSON 规范解决画图问题。</p>
           </div>
           <div class="blog-footer">
-            <span>科研工具</span>
-            <span class="read-more-link">阅读全文 <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </div>
-
-        <!-- Article 3 -->
-        <div class="blog-card" onclick="openArticle('cloudflare-pages')">
-          <div>
-            <div class="blog-meta">
-              <span class="blog-tag">Web 部署</span>
-              <span>2026-07-20</span>
-              <span>· 3 分钟阅读</span>
-            </div>
-            <h3>学生党免费建站指南：GitHub Pages + Cloudflare Pages 架构避坑</h3>
-            <p>从 CNAME 记录配置、Cloudflare 522 报错排查到 CNAME 拉平技术，实现永久免费且极速访问的个人博客。</p>
-          </div>
-          <div class="blog-footer">
-            <span>建站踩坑</span>
+            <span>辅助工具</span>
             <span class="read-more-link">阅读全文 <i class="fa-solid fa-arrow-right"></i></span>
           </div>
         </div>
@@ -182,47 +221,50 @@
     </div>
   </section>
 
-  <!-- Research & Skills Section -->
-  <section id="skills" class="skills-section">
+  <!-- Secondary Tools & Projects Section -->
+  <section id="tools" class="projects-section">
     <div class="container">
       <div class="section-header">
-        <div class="subtitle">RESEARCH & EXPLORATION</div>
-        <h2>研究兴趣与自动化探索</h2>
-        <p>日常学习与攻克的自动化技术方向</p>
+        <div class="subtitle">SECONDARY TOOLS</div>
+        <h2>科研辅助小工具</h2>
+        <p>日常学习与科研过程中积累的小项目与自动化脚本</p>
       </div>
 
-      <div class="skills-grid">
-        <!-- Skill 1 -->
-        <div class="skill-card">
-          <div class="skill-icon">
-            <i class="fa-solid fa-chart-line"></i>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div>
+            <h3>Origin Figure MCP</h3>
+            <p>基于 Python 的 OriginLab 绘图 MCP 服务端，支持自然语言绘制矢量图。</p>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>MCP</span>
+              <span>OriginLab</span>
+            </div>
           </div>
-          <h3>Origin 出版级绘图自动化</h3>
-          <p>基于 StyleSpec 规范收敛图表尺寸、字体与配色，导出 600 DPI 矢量图与 OPJU 工程。</p>
+          <a href="https://github.com/uuina" target="_blank" class="project-link">
+            在 GitHub 查看 <i class="fa-solid fa-arrow-right"></i>
+          </a>
         </div>
 
-        <!-- Skill 2 -->
-        <div class="skill-card">
-          <div class="skill-icon">
-            <i class="fa-solid fa-cubes"></i>
+        <div class="project-card">
+          <div>
+            <h3>CNIPA Patent AutoWriter</h3>
+            <p>结构化权利要求提取规范与专利交底书辅助转译设计小工具。</p>
+            <div class="project-tags">
+              <span>AI Agent</span>
+              <span>NLP</span>
+              <span>CNIPA</span>
+            </div>
           </div>
-          <h3>过程层析成像 (ECT / ECVT)</h3>
-          <p>气液两相流场重构、28 通道电容质量检测、2D/3D 三角形及四面体相分布可视化。</p>
-        </div>
-
-        <!-- Skill 3 -->
-        <div class="skill-card">
-          <div class="skill-icon">
-            <i class="fa-solid fa-file-contract"></i>
-          </div>
-          <h3>CNIPA 专利自动化提取</h3>
-          <p>提取技术交底书中的创新特征，探索结构化权利要求书设计与说明书生成。</p>
+          <a href="https://github.com/uuina" target="_blank" class="project-link">
+            在 GitHub 查看 <i class="fa-solid fa-arrow-right"></i>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Interactive Demo Section (OpenAI Playground Style) -->
+  <!-- Interactive Demo Section (StyleSpec) -->
   <section id="demo-spec" class="demo-section">
     <div class="container">
       <div class="section-header">
@@ -299,70 +341,12 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="projects-section">
-    <div class="container">
-      <div class="section-header">
-        <div class="subtitle">OPEN SOURCE</div>
-        <h2>开源项目与工具</h2>
-        <p>学习探索过程中编写的开源小工具</p>
-      </div>
-
-      <div class="projects-grid">
-        <div class="project-card">
-          <div>
-            <h3>Origin Figure MCP</h3>
-            <p>基于 Python 的 OriginLab 绘图 MCP 服务端，支持自然语言绘制矢量图。</p>
-            <div class="project-tags">
-              <span>Python</span>
-              <span>MCP</span>
-              <span>OriginLab</span>
-            </div>
-          </div>
-          <a href="https://github.com/uuina" target="_blank" class="project-link">
-            在 GitHub 查看 <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <h3>ECT MassFlow Visualizer</h3>
-            <p>电容过程层析成像（ECT）三维流型重构与相含率计算小工具。</p>
-            <div class="project-tags">
-              <span>PyVista</span>
-              <span>NumPy</span>
-              <span>Reconstruction</span>
-            </div>
-          </div>
-          <a href="https://github.com/uuina" target="_blank" class="project-link">
-            在 GitHub 查看 <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-
-        <div class="project-card">
-          <div>
-            <h3>CNIPA Patent AutoWriter</h3>
-            <p>结构化权利要求提取规范与专利交底书辅助转译设计。</p>
-            <div class="project-tags">
-              <span>AI Agent</span>
-              <span>NLP</span>
-              <span>CNIPA</span>
-            </div>
-          </div>
-          <a href="https://github.com/uuina" target="_blank" class="project-link">
-            在 GitHub 查看 <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Article Reader Modal -->
   <div id="article-modal" class="modal-overlay">
     <div class="modal-card">
       <div class="modal-header">
         <span class="modal-title" id="modal-article-title">文章阅读</span>
-        <button class="btn-close-modal" onclick="closeArticle()">&times;</button>
+        <button class="btn-close-modal" onclick="window.closeArticle()">&times;</button>
       </div>
       <div class="modal-body" id="modal-article-content">
         <!-- Article content loaded dynamically -->
@@ -373,7 +357,7 @@
   <!-- Footer Section -->
   <footer class="footer-section">
     <div class="container footer-content">
-      <p>&copy; 2026 uuina. Student & Developer. Powered by Cloudflare Pages.</p>
+      <p>&copy; 2026 uuina. ECT/ECVT Researcher & Developer. Powered by Cloudflare Pages.</p>
       <div class="footer-links">
         <a href="https://github.com/uuina" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
       </div>
