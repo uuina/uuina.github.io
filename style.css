@@ -822,7 +822,7 @@ body {
 
 /* Footer Section */
 .footer-section {
-  padding: 60px 0 35px;
+  padding: 50px 0 35px;
   border-top: 1px solid var(--border-color);
 }
 
@@ -845,50 +845,228 @@ body {
   color: var(--text-primary);
 }
 
-/* Responsive */
+/* ==========================================================================
+   Comprehensive Mobile & Tablet Responsive Design
+   ========================================================================== */
+
+/* Tablet & Intermediate Screens (<= 900px) */
 @media (max-width: 900px) {
+  .hero-section {
+    padding: 100px 0 60px;
+  }
+
   .hero-grid {
     grid-template-columns: 1fr;
+    gap: 2.2rem;
   }
+
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
   }
-  .hero-stats {
-    flex-wrap: wrap;
-    gap: 1.5rem;
+
+  .hero-card-wrapper {
+    max-width: 580px;
+    margin: 0 auto;
+    width: 100%;
   }
-  .stat-value {
-    font-size: 1.3rem;
-  }
-  .demo-grid {
-    grid-template-columns: 1fr;
-  }
-  .demo-controls {
-    border-right: none;
-    border-bottom: 1px solid var(--border-color);
-  }
+
   .nav-links {
     display: flex;
-    gap: 1rem;
+    gap: 1.2rem;
     overflow-x: auto;
-    padding-bottom: 0.2rem;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
   }
+
   .nav-links::-webkit-scrollbar {
-    display: none;
+    display: none; /* Chrome / Safari */
   }
 }
 
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 1.8rem;
+/* Mobile Screens (<= 640px) */
+@media (max-width: 640px) {
+  .container {
+    width: 92%;
+    padding: 0 0.5rem;
   }
+
+  /* Compact Sleek Sticky Topbar */
   .nav-container {
-    flex-direction: column;
-    height: auto;
-    padding: 1rem;
-    gap: 1rem;
+    height: 54px;
+    padding: 0 0.8rem;
+    gap: 0.5rem;
   }
-  .nav-actions {
-    display: none; /* Hide github button on very small screens to save space */
+
+  .brand {
+    font-size: 0.98rem;
+    gap: 0.4rem;
+  }
+
+  .brand-badge {
+    width: 24px;
+    height: 24px;
+    font-size: 0.75rem;
+  }
+
+  .nav-links {
+    gap: 0.9rem;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+  }
+
+  .btn-github {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.78rem;
+  }
+
+  /* Hero Section Mobile Polish */
+  .hero-section {
+    padding: 84px 0 40px;
+  }
+
+  .hero-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-title {
+    font-size: 1.85rem;
+    line-height: 1.22;
+    margin-bottom: 1rem;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    text-align: center;
+    padding-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .stat-value {
+    font-size: 1.15rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+  }
+
+  .hero-btns {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.88rem;
+  }
+
+  /* Code Card Mobile Adjustments */
+  .code-card-header {
+    padding: 0.5rem 0.9rem;
+  }
+
+  .code-card-body {
+    padding: 0.9rem 0.8rem;
+    font-size: 0.76rem;
+    line-height: 1.55;
+  }
+
+  /* Section Padding & Headings */
+  .skills-section, .blog-section, .projects-section {
+    padding: 45px 0;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .section-header p {
+    font-size: 0.88rem;
+  }
+
+  /* Cards Padding */
+  .blog-card, .skill-card, .project-card {
+    padding: 1.25rem 1.1rem;
+  }
+
+  .blog-card h3, .skill-card h3, .project-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .blog-card p, .skill-card p, .project-card p {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Modal Optimization on Mobile */
+  .modal-card {
+    width: 94%;
+    max-height: 88vh;
+    border-radius: var(--radius-lg);
+  }
+
+  .modal-header {
+    padding: 0.9rem 1.1rem;
+  }
+
+  .modal-title {
+    font-size: 1.05rem;
+  }
+
+  .modal-body {
+    padding: 1.1rem 1rem;
+    font-size: 0.88rem;
+    line-height: 1.65;
+  }
+
+  /* Footer Mobile Layout */
+  .footer-section {
+    padding: 40px 0 25px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .footer-links a {
+    margin: 0 0.6rem;
+  }
+}
+
+/* Extra Small Mobile Screens (<= 380px) */
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .brand-text {
+    font-size: 0.9rem;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
   }
 }
