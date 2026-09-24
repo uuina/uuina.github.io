@@ -36,7 +36,7 @@ window.openArticle = async function(id) {
     
     // Set title based on id (since markdown files don't have frontmatter yet)
     let title = "阅读文章";
-    if (id === 'ect-ecvt-research') title = "过程层析成像 (ECT/ECVT) 技术概述与研究简述";
+    if (id === 'ect-ecvt-research') title = "电容层析成像 (ECT/ECVT) 技术原理与应用优势";
     if (id === 'mcp-guide') title = "Model Context Protocol (MCP) 在科研辅助中的探索";
 
     modalTitle.textContent = title;

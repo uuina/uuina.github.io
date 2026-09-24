@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>uuina | ECT/ECVT Research & Automation Explorer</title>
-  <meta name="description" content="uuina 的个人主页与技术博客。主研究方向：过程层析成像（ECT/ECVT）技术与流场可视化应用。">
+  <title>uuina | 电容层析成像 (ECT/ECVT) 研究与技术记录</title>
+  <meta name="description" content="uuina 的个人主页与技术记录。专注于电容层析成像（ECT/ECVT）技术、多相流非侵入检测与三维流场可视化。">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +33,7 @@
 
       <nav class="nav-links">
         <a href="#about" class="nav-link active">关于我</a>
-        <a href="#ect-research" class="nav-link">核心科研 (ECT/ECVT)</a>
+        <a href="#ect-research" class="nav-link">电容层析成像 (ECT/ECVT)</a>
         <a href="#blog" class="nav-link">博客文章</a>
         <a href="#tools" class="nav-link">辅助工具</a>
       </nav>
@@ -54,7 +54,7 @@
     <div class="mobile-drawer-content">
       <nav class="mobile-drawer-links">
         <a href="#about" class="mobile-nav-link"><i class="fa-solid fa-user"></i> 关于我</a>
-        <a href="#ect-research" class="mobile-nav-link"><i class="fa-solid fa-cubes"></i> 核心科研 (ECT/ECVT)</a>
+        <a href="#ect-research" class="mobile-nav-link"><i class="fa-solid fa-cubes"></i> 电容层析成像 (ECT/ECVT)</a>
         <a href="#blog" class="mobile-nav-link"><i class="fa-regular fa-newspaper"></i> 博客文章</a>
         <a href="#tools" class="mobile-nav-link"><i class="fa-solid fa-wrench"></i> 辅助工具</a>
       </nav>
@@ -72,36 +72,36 @@
       <div class="hero-content">
         <div class="hero-tag">
           <span class="pulse-dot"></span>
-          <span>Process Tomography (ECT / ECVT) Researcher</span>
+          <span>Electrical Capacitance Tomography (ECT / ECVT)</span>
         </div>
         <h1 class="hero-title">
-          专注于 <span class="gradient-text">ECT/ECVT 过程层析成像</span> 研究
+          聚焦 <span class="gradient-text">电容层析成像 (ECT/ECVT)</span> 与流场三维反演
         </h1>
         <p class="hero-description">
-          你好！我是 uuina，一名学生与科研探索者。我的**核心主项目是过程层析成像（ECT / ECVT）**——关注多相流无损检测、三维流型可视化与相含率计算；平时也会编写一些科研辅助小工具。
+          专注于<strong>电容层析成像（ECT）</strong>与<strong>三维电容层析成像（ECVT）</strong>技术研究，探索复杂管道与低温多相流系统的非侵入式测量、敏感场建模与三维空间相态分布重构；兼顾科研工具链与实用自动化脚本开发。
         </p>
 
         <div class="hero-stats">
           <div class="stat-item">
             <span class="stat-value">ECT / ECVT</span>
-            <span class="stat-label">主攻科研方向</span>
+            <span class="stat-label">电容层析成像</span>
           </div>
           <div class="stat-item">
-            <span class="stat-value">3D Mesh</span>
-            <span class="stat-label">流场非接触检测</span>
+            <span class="stat-value">3D Volume</span>
+            <span class="stat-label">空间容积反演</span>
           </div>
           <div class="stat-item">
-            <span class="stat-value">28 Ch</span>
-            <span class="stat-label">传感器信号解析</span>
+            <span class="stat-value">Non-intrusive</span>
+            <span class="stat-label">非侵入无损检测</span>
           </div>
         </div>
 
         <div class="hero-btns">
           <a href="#ect-research" class="btn-primary">
-            <i class="fa-solid fa-cube"></i> 查看 ECT/ECVT 核心科研
+            <i class="fa-solid fa-cube"></i> 查看 ECT/ECVT 技术方向
           </a>
           <a href="#blog" class="btn-secondary">
-            <i class="fa-regular fa-newspaper"></i> 阅读技术博客
+            <i class="fa-regular fa-newspaper"></i> 阅读技术笔记
           </a>
         </div>
       </div>
@@ -115,18 +115,22 @@
               <span class="dot yellow"></span>
               <span class="dot green"></span>
             </div>
-            <span class="term-title">process_tomography.py</span>
+            <span class="term-title">capacitance_tomography.py</span>
           </div>
           <div class="code-card-body">
-<pre><code><span class="code-comment"># Process Tomography (ECT / ECVT) Framework</span>
-<span class="code-keyword">class</span> ProcessTomographyResearch:
-    <span class="code-keyword">def</span> __init__(self):
-        self.primary_focus = <span class="code-str">"ECT & ECVT"</span>
-        self.methodology = <span class="code-str">"Non-intrusive Measurement"</span>
-        self.application = <span class="code-str">"Multi-phase Flow Field Visualization"</span>
+<pre><code><span class="code-comment"># Electrical Capacitance Tomography (ECT / ECVT)</span>
+<span class="code-comment"># Governing: &nabla; &middot; (&epsilon;(r) &nabla;&phi;(r)) = 0 (Electrostatic Field)</span>
+<span class="code-comment"># Normalized model: C_norm = S &middot; g + noise</span>
 
-    <span class="code-keyword">def</span> get_summary(self):
-        <span class="code-keyword">return</span> <span class="code-str">"Focusing on safety, accuracy & 3D flow visualization"</span></code></pre>
+<span class="code-keyword">class</span> CapacitanceTomography:
+    <span class="code-keyword">def</span> __init__(self, mode=<span class="code-str">"3D_ECVT"</span>):
+        self.sensing = <span class="code-str">"Non-intrusive peripheral electrode array"</span>
+        self.domain = <span class="code-str">"Multi-phase & cryogenic flow monitoring"</span>
+        self.advantages = [<span class="code-str">"Radiation-free"</span>, <span class="code-str">"High-speed dynamic"</span>, <span class="code-str">"3D volumetric"</span>]
+
+    <span class="code-keyword">def</span> reconstruct_phase(self, c_norm, sensitivity_matrix):
+        <span class="code-comment"># Inversion: reconstruct volumetric permittivity distribution g</span>
+        <span class="code-keyword">return</span> solve_inverse_field(c_norm, sensitivity_matrix)</code></pre>
           </div>
         </div>
       </div>
@@ -137,9 +141,9 @@
   <section id="ect-research" class="skills-section" style="background: rgba(255, 255, 255, 0.01); border-y: 1px solid var(--border-color);">
     <div class="container">
       <div class="section-header">
-        <div class="subtitle">PRIMARY RESEARCH PROJECT</div>
-        <h2>核心科研项目：过程层析成像 (ECT / ECVT)</h2>
-        <p>聚焦于电容过程层析成像（ECT）与三维电容过程层析成像（ECVT）技术的研究与应用</p>
+        <div class="subtitle">RESEARCH FOCUS & TECHNOLOGY</div>
+        <h2>电容层析成像 (ECT / ECVT)</h2>
+        <p>基于介质介电特性差异的多相流非侵入式在线监测与三维空间反演技术</p>
       </div>
 
       <div class="skills-grid">
@@ -148,26 +152,26 @@
           <div class="skill-icon">
             <i class="fa-solid fa-cubes"></i>
           </div>
-          <h3>非接触式三维流场可视化</h3>
-          <p>无需侵入管道内部，利用传感器阵列获取介质电性分布，实现管道内多相流体（如气液两相）的三维空间非接触无损检测。</p>
+          <h3>三维容积成像机制</h3>
+          <p>聚焦电容层析成像（ECT）向三维容积成像（ECVT）的拓展。基于外围阵列电极感知流场极间电容响应，建立敏感场正反演模型，将传统二维横截面拓展至全域三维空间，直观呈现多相介质的立体流动形态与相态拓扑。</p>
         </div>
 
         <!-- Feature 2 -->
         <div class="skill-card" style="border-color: var(--border-hover);">
           <div class="skill-icon">
-            <i class="fa-solid fa-wave-square"></i>
+            <i class="fa-solid fa-shield-halved"></i>
           </div>
-          <h3>多通道电容信号采集与解析</h3>
-          <p>针对阵列电容微弱信号特征，建立高信噪比数据预处理与质量校验，保障测试过程的稳定可靠。</p>
+          <h3>非侵入式与本质安全</h3>
+          <p>传感器布置于管道或容器外壁，无需伸入流道内部，对流场零扰动、无压降损失与机械磨损。相比 X/γ 射线 CT 无任何电离辐射风险，设备轻便、成本可控且安全性高，适于严苛工况与工业密闭系统。</p>
         </div>
 
         <!-- Feature 3 -->
         <div class="skill-card" style="border-color: var(--border-hover);">
           <div class="skill-icon">
-            <i class="fa-solid fa-chart-area"></i>
+            <i class="fa-solid fa-bolt-lightning"></i>
           </div>
-          <h3>相分布与流型变化规律研究</h3>
-          <p>分析管道截面相含率在不同运行工况下的动态演化，为工业流体传输与安全监测提供科学依据。</p>
+          <h3>高动态响应与多相流应用</h3>
+          <p>具备毫秒级时间响应特性，能够有效捕捉分层流、弹状流、泡状流等高速流动瞬态流型的动态演变；在低温两相流（如液氮、低温推进剂、LNG）、多相流相含率计量与流动保障监测中具有广阔应用前景。</p>
         </div>
       </div>
     </div>
@@ -187,15 +191,15 @@
         <div class="blog-card" data-article-id="ect-ecvt-research">
           <div>
             <div class="blog-meta">
-              <span class="blog-tag">核心科研</span>
+              <span class="blog-tag">电容层析成像</span>
               <span>2026-07-28</span>
               <span>· 3 分钟阅读</span>
             </div>
-            <h3>过程层析成像 (ECT/ECVT) 技术概述与研究简述</h3>
-            <p>介绍过程层析成像 (ECT/ECVT) 的现实研究背景、非接触无损检测的技术优势以及课题的研究概述。</p>
+            <h3>电容层析成像 (ECT/ECVT) 技术原理与应用优势</h3>
+            <p>梳理电容层析成像（ECT）与三维电容层析成像（ECVT）的技术原理、非侵入式测量优势，以及在低温多相流与管流监测中的典型应用场景。</p>
           </div>
           <div class="blog-footer">
-            <span>主项目笔记</span>
+            <span>核心技术概览</span>
             <button class="read-more-link" type="button" style="background:none; border:none; cursor:pointer;">
               阅读全文 <i class="fa-solid fa-arrow-right"></i>
             </button>
