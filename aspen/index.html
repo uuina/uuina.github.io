@@ -3,22 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aspen Plus / HYSYS V11 自动化安装套件与极速分发中心 | uuina.space</title>
-  <meta name="description" content="基于真实工程实测的 Aspen Plus / HYSYS V11 极速分发与 AI Agent 全自动部署方案。免百度网盘限速，0.05秒静默导入3130项授权，彻底解决WlmAdmin卡死与VC++缺失难题。">
+  <title>Aspen Plus 与 HYSYS V11 安装指南与下载</title>
+  <meta name="description" content="面向化工与热工专业学生的 Aspen Plus 与 HYSYS V11 安装说明，包含完整安装包下载、人工逐步安装教程与 AI 辅助安装指引。">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
   
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=1.0">
+  <link rel="stylesheet" href="style.css?v=2.0">
 </head>
 <body>
-  <!-- Background Glow & Grid Canvas -->
+  <!-- Background Glow & Grid -->
   <div class="bg-glow-container">
     <div class="bg-grid"></div>
   </div>
@@ -28,18 +27,17 @@
     <div class="nav-container">
       <a href="#" class="brand">
         <span class="brand-badge"><i class="fa-solid fa-flask"></i></span>
-        <span class="brand-text">uuina<span class="dot">.</span>aspen</span>
+        <span class="brand-text">Aspen V11 指南</span>
       </a>
 
       <nav class="nav-links">
-        <a href="#download" class="nav-link">极速下载</a>
-        <a href="#ai-guide" class="nav-link">AI 自动化部署</a>
-        <a href="#pitfalls" class="nav-link">避坑指南</a>
-        <a href="#preflight" class="nav-link">预检脚本</a>
+        <a href="#download" class="nav-link">下载文件</a>
+        <a href="#manual-guide" class="nav-link">人工安装教程</a>
+        <a href="#ai-guide" class="nav-link">AI 辅助安装</a>
       </nav>
 
       <div class="nav-actions">
-        <a href="https://hnnilovey.me" target="_blank" class="btn-nav-home" title="返回个人主站">
+        <a href="https://hnnilovey.me" class="btn-nav-home" title="返回主站">
           <i class="fa-solid fa-arrow-left"></i> 返回主站
         </a>
         <button id="mobile-menu-toggle" class="mobile-toggle-btn" aria-label="切换菜单">
@@ -53,355 +51,218 @@
   <div id="mobile-drawer" class="mobile-drawer-overlay">
     <div class="mobile-drawer-content">
       <nav class="mobile-drawer-links">
-        <a href="#download" class="mobile-nav-link"><i class="fa-solid fa-download"></i> 极速下载中心</a>
-        <a href="#ai-guide" class="mobile-nav-link"><i class="fa-solid fa-robot"></i> AI 自动化部署</a>
-        <a href="#pitfalls" class="mobile-nav-link"><i class="fa-solid fa-shield-halved"></i> 核心避坑指南</a>
-        <a href="#preflight" class="mobile-nav-link"><i class="fa-solid fa-terminal"></i> 预检脚本速查</a>
-        <a href="https://hnnilovey.me" target="_blank" class="mobile-nav-link"><i class="fa-solid fa-house"></i> 返回 uuina 个人主页</a>
+        <a href="#download" class="mobile-nav-link"><i class="fa-solid fa-download"></i> 下载文件</a>
+        <a href="#manual-guide" class="mobile-nav-link"><i class="fa-solid fa-book-open"></i> 人工安装教程</a>
+        <a href="#ai-guide" class="mobile-nav-link"><i class="fa-solid fa-robot"></i> AI 辅助安装</a>
+        <a href="https://hnnilovey.me" class="mobile-nav-link"><i class="fa-solid fa-house"></i> 返回主站</a>
       </nav>
     </div>
   </div>
 
   <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <div class="hero-tag">
-          <span class="pulse-dot"></span>
-          <span>Aspen Tech V11 全套工业仿真自动化套件</span>
-        </div>
-        <h1 class="hero-title">
-          Aspen Plus & HYSYS <span class="gradient-text">V11 全自动部署</span>
-        </h1>
-        <p class="hero-description">
-          告别慢速网盘与长达 70 步繁琐向导！基于真实实机验证精简打包，内置自动化预检脚本与 Sentinel 许可证秒级导入补丁（<strong>耗时从 30 分钟缩至 0.05 秒</strong>），支持 Cursor、Claude Code、Antigravity 等 AI 编程助手全自动帮你安装。
-        </p>
-
-        <div class="hero-stats">
-          <div class="stat-item">
-            <span class="stat-value">9.52 GB</span>
-            <span class="stat-label">优化精简镜像</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-value">0 出口费</span>
-            <span class="stat-label">Cloudflare R2 直连</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-value">0.05 s</span>
-            <span class="stat-label">静默写入许可证</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-value">2030</span>
-            <span class="stat-label">3130 项功能授权</span>
-          </div>
-        </div>
-
-        <div class="hero-btns">
-          <a href="#download" class="btn-primary">
-            <i class="fa-solid fa-download"></i> 立即极速下载
-          </a>
-          <button class="btn-secondary btn-copy-prompt">
-            <i class="fa-solid fa-wand-magic-sparkles"></i> 复制 AI 提示词
-          </button>
-        </div>
+  <section class="hero-section" style="padding-bottom: 40px;">
+    <div class="container" style="max-width: 820px; text-align: center;">
+      <div class="hero-tag" style="margin: 0 auto 1.5rem;">
+        <span class="pulse-dot"></span>
+        <span>化工流程模拟软件安装指南</span>
       </div>
+      <h1 class="hero-title" style="margin-bottom: 1rem;">
+        Aspen Plus & HYSYS V11 安装指南
+      </h1>
+      <p class="hero-description" style="max-width: 680px; margin: 0 auto 2rem; font-size: 1.05rem;">
+        这是为化工与过程工程专业同学整理的 Aspen Plus 与 HYSYS V11 安装说明。安装包已做好精简，修正了老教程中容易导致电脑卡死和安装失败的地方。你可以跟随下方步骤逐步安装，也可以将提示词交给 AI 工具协助完成。
+      </p>
 
-      <!-- Hero Terminal Card -->
-      <div class="hero-card-wrapper">
-        <div class="code-card">
-          <div class="code-card-header">
-            <div class="term-dots">
-              <span class="dot red"></span>
-              <span class="dot yellow"></span>
-              <span class="dot green"></span>
-            </div>
-            <span class="term-title">preflight_and_patch.ps1</span>
-          </div>
-          <div class="code-card-body">
-<pre><code><span class="code-comment"># 1. 执行全自动化环境核查</span>
-<span class="code-cmd">PS &gt; .\preflight_and_patch.ps1 -Action check</span>
-<span class="code-success">[OK]</span> 英文路径与系统编码检测通过
-<span class="code-success">[OK]</span> D 盘可用空间充足 (87.2 GB)
-
-<span class="code-comment"># 2. 0.05秒极速静默授权 (告别 WlmAdmin 卡死)</span>
-<span class="code-cmd">PS &gt; .\preflight_and_patch.ps1 -Action setup-license</span>
-<span class="code-success">[OK]</span> Sentinel RMS 8.5.1 服务已静默安装
-<span class="code-success">[OK]</span> 3,130 项有效授权秒级注入服务目录
-<span class="code-success">[OK]</span> LSHOST 环境变量与注册表已双通道绑定</code></pre>
-          </div>
-        </div>
+      <div class="hero-btns" style="justify-content: center;">
+        <a href="#download" class="btn-primary">
+          <i class="fa-solid fa-download"></i> 获取安装包
+        </a>
+        <a href="#manual-guide" class="btn-secondary">
+          <i class="fa-solid fa-book-open"></i> 查看安装教程
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Section 1: Download -->
   <section id="download" class="section">
-    <div class="container">
+    <div class="container" style="max-width: 820px;">
       <div class="section-header">
-        <div class="subtitle">HIGH SPEED DISTRIBUTION</div>
-        <h2 class="section-title">极速下载中心与断点续传</h2>
-        <p class="section-desc">安装包托管于 Cloudflare R2 高速对象存储，原生支持 HTTP Range 分片并发与断点续传，告别百度网盘限速。</p>
+        <div class="subtitle">DOWNLOAD</div>
+        <h2 class="section-title">下载安装包</h2>
+        <p class="section-desc">包含完整的安装组件、许可证文件与说明，解压后即可直接使用。</p>
       </div>
 
-      <div class="download-grid">
-        <!-- Direct Download Card -->
-        <div class="card">
-          <div class="card-badge badge-blue">
-            <i class="fa-solid fa-bolt"></i> 官方推荐直链
+      <div class="card" style="padding: 2.2rem;">
+        <div class="file-meta-table" style="margin-bottom: 1.8rem;">
+          <div class="file-meta-row">
+            <span class="meta-label">文件名称</span>
+            <span class="meta-val">AspenPlus_V11_Full.zip</span>
           </div>
-          <h3 class="card-title">浏览器单键高速直链</h3>
-          <p class="card-desc">纯净完整打包，解压后即包含 <code>01-组件</code>、<code>02-破解</code>、<code>03-Aspen</code>、自动化脚本与 AI 运行手册。</p>
-
-          <div class="file-meta-table">
-            <div class="file-meta-row">
-              <span class="meta-label">文件名称</span>
-              <span class="meta-val">AspenPlus_V11_Full.zip</span>
-            </div>
-            <div class="file-meta-row">
-              <span class="meta-label">文件体积</span>
-              <span class="meta-val">9.52 GB (10,225,380,787 字节)</span>
-            </div>
-            <div class="file-meta-row">
-              <span class="meta-label">MD5 校验</span>
-              <span class="meta-val">99E43DC772317991F55B68100C0F7B36</span>
-            </div>
-            <div class="file-meta-row">
-              <span class="meta-label">网络支持</span>
-              <span class="meta-val">HTTP Range 断点续传 / 局域网千兆并发</span>
-            </div>
+          <div class="file-meta-row">
+            <span class="meta-label">文件大小</span>
+            <span class="meta-val">约 9.5 GB</span>
           </div>
-
-          <div style="display: flex; flex-direction: column; gap: 0.7rem;">
-            <a href="http://10.192.164.117:8080/AspenPlus_V11_Full.zip" class="btn-accent" style="justify-content: center; width: 100%;">
-              <i class="fa-solid fa-graduation-cap"></i> 🏫 校园网内网直连极速下载 (50~100 MB/s)
-            </a>
-            <a href="https://download.hnnilovey.me/AspenPlus_V11_Full.zip" class="btn-secondary" style="justify-content: center; width: 100%;">
-              <i class="fa-solid fa-cloud-arrow-down"></i> 🌐 外网 / R2 镜像通用直链 (9.52 GB)
-            </a>
+          <div class="file-meta-row">
+            <span class="meta-label">校验码 MD5</span>
+            <span class="meta-val">99E43DC772317991F55B68100C0F7B36</span>
           </div>
         </div>
 
-        <!-- CLI / Multi-thread Resume Card -->
-        <div class="card">
-          <div class="card-badge badge-green">
-            <i class="fa-solid fa-network-wired"></i> 多线程 / 命令行断点下载
-          </div>
-          <h3 class="card-title">专业下载工具与命令行</h3>
-          <p class="card-desc">对于大文件，强烈建议使用多线程下载器（如 IDM、FDM）或内置断点续传命令，避免网络抖动导致重新开始。</p>
-
-          <div class="tabs-header">
-            <button class="tab-btn active" data-tab="tab-idm">IDM / 多线程</button>
-            <button class="tab-btn" data-tab="tab-pwsh">PowerShell 脚本</button>
-            <button class="tab-btn" data-tab="tab-curl">Curl 命令行</button>
-          </div>
-
-          <!-- Tab IDM -->
-          <div id="tab-idm" class="tab-content active">
-            <div class="cmd-box">
-              <button class="btn-copy-code" data-copy-target="code-idm-url"><i class="fa-regular fa-copy"></i> 复制直链</button>
-              <pre><code id="code-idm-url">https://download.hnnilovey.me/AspenPlus_V11_Full.zip</code></pre>
-            </div>
-            <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;">
-              💡 <strong>推荐配置</strong>：在 IDM 或 Motrix 中新建任务，连接数设置为 <strong>16 或 32</strong>，即可轻松跑满家庭或校园千兆宽带。
-            </p>
-          </div>
-
-          <!-- Tab PowerShell -->
-          <div id="tab-pwsh" class="tab-content">
-            <div class="cmd-box">
-              <button class="btn-copy-code" data-copy-target="code-pwsh-cmd"><i class="fa-regular fa-copy"></i> 复制代码</button>
-              <pre><code id="code-pwsh-cmd"># 在 PowerShell (pwsh) 中执行高速下载
-$url = "https://download.hnnilovey.me/AspenPlus_V11_Full.zip"
-$dest = "D:\AspenPlus_V11_Full.zip"
-Start-BitsTransfer -Source $url -Destination $dest -DisplayName "Downloading Aspen V11"</code></pre>
-            </div>
-            <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;">
-              💡 <strong>BITS 传输服务</strong>：后台智能占用带宽，遇断网自动暂停，恢复后自动续传。
-            </p>
-          </div>
-
-          <!-- Tab Curl -->
-          <div id="tab-curl" class="tab-content">
-            <div class="cmd-box">
-              <button class="btn-copy-code" data-copy-target="code-curl-cmd"><i class="fa-regular fa-copy"></i> 复制代码</button>
-              <pre><code id="code-curl-cmd"># 支持自动断点续传 (-C -)
-curl -L -C - -o AspenPlus_V11_Full.zip "https://download.hnnilovey.me/AspenPlus_V11_Full.zip"</code></pre>
-            </div>
-            <p style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.5;">
-              💡 <strong>断点续传说明</strong>：若中途中断，重新运行同一条命令即可紧接当前进度继续下载。
-            </p>
-          </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;">
+          <a href="http://10.192.164.117:8080/AspenPlus_V11_Full.zip" target="_blank" rel="noopener noreferrer" class="btn-accent" style="justify-content: center; text-align: center; padding: 1rem;">
+            <i class="fa-solid fa-graduation-cap"></i> 校园网下载
+          </a>
+          <a href="https://download.hnnilovey.me/AspenPlus_V11_Full.zip" class="btn-secondary" style="justify-content: center; text-align: center; padding: 1rem;">
+            <i class="fa-solid fa-cloud-arrow-down"></i> 通用网络下载
+          </a>
         </div>
+
+        <p style="margin-top: 1.2rem; margin-bottom: 0; font-size: 0.84rem; color: var(--text-muted); line-height: 1.6; text-align: center;">
+          说明：在校内连接校园网时优先选择校园网下载，点击后会在新标签页直接开始下载；如果在校外或校园网连接不畅，请选择通用网络下载。
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- Section 2: AI Agent Guide -->
+  <!-- Section 2: Manual Guide -->
+  <section id="manual-guide" class="section">
+    <div class="container" style="max-width: 860px;">
+      <div class="section-header">
+        <div class="subtitle">STEP BY STEP TUTORIAL</div>
+        <h2 class="section-title">人工安装教程</h2>
+        <p class="section-desc">按照以下六个步骤依次操作，避开常见卡顿与报错即可顺利完成。</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 1.8rem;">
+        
+        <!-- Step 1 -->
+        <div class="card">
+          <div class="card-badge badge-blue">步骤一</div>
+          <h3 class="card-title">系统准备与环境要求</h3>
+          <p class="card-desc">
+            安装前必须确认系统满足以下三项基础要求，否则后续极易出现闪退或数据库故障：
+          </p>
+          <ul style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.8; padding-left: 1.2rem; margin-bottom: 1rem;">
+            <li><strong>纯英文路径</strong>：当前电脑的 Windows 用户名和计算机名称必须全为英文字母，不能包含任何中文或空格。</li>
+            <li><strong>充足磁盘空间</strong>：请确保 D 盘拥有 30 GB 以上的可用剩余空间。</li>
+            <li><strong>开启 Windows 必备功能</strong>：进入系统控制面板，找到程序和功能下的启用或关闭 Windows 功能，勾选 <code>.NET Framework 3.5</code> 以及 <code>Internet Information Services</code> 相关选项，点击确定等待系统自动启用完成。</li>
+          </ul>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="card">
+          <div class="card-badge badge-blue">步骤二</div>
+          <h3 class="card-title">安装前置依赖组件</h3>
+          <p class="card-desc">
+            解压下载好的压缩包，进入 <code>01-组件</code> 文件夹：
+          </p>
+          <ul style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.8; padding-left: 1.2rem; margin-bottom: 0;">
+            <li>找到 <code>Microsoft SQL Express 2012</code> 文件夹，运行安装程序 <code>SQLEXPR_x64_ENU.exe</code>，按照默认选项一路点击 Next 直到安装完毕。</li>
+            <li>返回组件目录，找到 Access 数据库引擎安装包双击安装，为物性数据库提供支持。</li>
+          </ul>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="card">
+          <div class="card-badge badge-blue">步骤三</div>
+          <h3 class="card-title">部署许可证服务与授权</h3>
+          <p class="card-desc">
+            老教程中通过管理工具逐条导入证书往往会导致界面未响应卡死半小时。这里推荐更简单快速的操作：
+          </p>
+          <div style="background: var(--bg-card); border-left: 3px solid var(--accent-indigo); padding: 1.2rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.8;">
+            <p style="margin-top: 0; margin-bottom: 0.6rem;">
+              <strong>1. 安装服务</strong>：打开 <code>02-破解\Sentinel RMS License Manager 8.5.1</code> 文件夹，双击运行 <code>Setup.exe</code> 完成服务安装。
+            </p>
+            <p style="margin-bottom: 0.6rem;">
+              <strong>2. 放入授权文件</strong>：复制 <code>02-破解</code> 文件夹里的 <code>lservrc</code> 文件，直接粘贴到系统目录：<br>
+              <code style="color: #38bdf8;">C:\Program Files (x86)\Common Files\SafeNet Sentinel\Sentinel RMS License Manager\WinNT</code>
+            </p>
+            <p style="margin-bottom: 0.6rem;">
+              <strong>3. 重启服务</strong>：在电脑开始菜单搜索 服务 打开，找到 <code>Sentinel RMS License Manager</code>，鼠标右键点击并选择 <strong>重新启动</strong>。
+            </p>
+            <p style="margin-bottom: 0;">
+              <strong>4. 设置环境变量</strong>：打开电脑高级系统设置中的环境变量，在系统变量中点击新建，变量名填写 <code>LSHOST</code>，变量值填写你的当前计算机名称。
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="card">
+          <div class="card-badge badge-blue">步骤四</div>
+          <h3 class="card-title">安装 Aspen 主程序</h3>
+          <p class="card-desc">
+            打开 <code>03-Aspen\aspenONE_V11_ENG</code> 文件夹，鼠标右键点击 <code>Setup.exe</code> 选择以管理员身份运行。
+          </p>
+          <ul style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.8; padding-left: 1.2rem; margin-bottom: 1rem;">
+            <li><strong>开始安装</strong>：点击界面上的 Install aspenONE products，勾选我同意许可协议，点击 Next。</li>
+            <li><strong>选择产品</strong>：勾选 <code>Process Modeling Aspen HYSYS</code>、<code>Process Modeling Aspen Plus</code> 以及 <code>Aspen Exchanger Design & Rating</code>。<strong>务必取消勾选</strong> <code>Server Products and Tools</code> 和 <code>Aspen Basic Engineering</code>。</li>
+            <li><strong>修改安装路径</strong>：点击界面上方的 File Location 标签，把默认的 C 盘全部改成 D 盘路径。</li>
+            <li><strong>最关键步骤说明</strong>：进入许可证配置页面时，<strong>License server 和 License file 两个输入框必须保持完全空白</strong>，绝对不要点击 Add Server 添加计算机名，直接点击右下角 Next 跳过即可。</li>
+            <li><strong>设置密码</strong>：按提示输入密码例如 Aa123456。</li>
+            <li><strong>正式安装</strong>：点击 Install Now 开始安装，整个过程通常需要十五到二十分钟。</li>
+          </ul>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="card">
+          <div class="card-badge badge-blue">步骤五</div>
+          <h3 class="card-title">安装中途报错处理</h3>
+          <p class="card-desc">
+            部分电脑在安装过程中可能会弹出一个提示找不到 <code>vc_red.msi</code> 临时路径的错误弹窗：
+          </p>
+          <div style="background: var(--bg-card); border-left: 3px solid var(--accent-amber); padding: 1.2rem; border-radius: 0 var(--radius-md) var(--radius-md) 0; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.8;">
+            这是旧版运行库临时解压路径缺失导致的。解决非常简单：<br>
+            找到 <code>03-Aspen\aspenONE_V11_ENG\3rd Party Redistributables\Microsoft\VC80</code> 目录下的 <code>vcredist_x86.exe</code>，将其解压后把里面的 <code>vc_red.msi</code> 复制到报错弹窗中指定的那个临时文件夹里，然后直接点击弹窗上的 <strong>OK</strong> 按钮即可顺利继续。
+          </div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="card">
+          <div class="card-badge badge-blue">步骤六</div>
+          <h3 class="card-title">完成安装与首次启动</h3>
+          <p class="card-desc">
+            向导提示安装完成后，点击 Finish 结束退出。
+          </p>
+          <ul style="color: var(--text-secondary); font-size: 0.92rem; line-height: 1.8; padding-left: 1.2rem; margin-bottom: 0;">
+            <li>首次从开始菜单启动 Aspen Plus 或 Aspen HYSYS 时，界面会弹出一个小窗口提示正在恢复物性数据库。</li>
+            <li><strong>这是正常的一次性初始化，通常需要一到三分钟时间</strong>。请耐心等待其自动配置完成后进入主界面，期间切勿强制结束进程。</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: AI Guide -->
   <section id="ai-guide" class="section">
-    <div class="container">
-      <div class="ai-agent-container">
-        <div class="ai-agent-header">
-          <div>
-            <div class="subtitle">AI-POWERED AUTOMATION</div>
-            <h2 class="section-title" style="margin-bottom: 0.4rem;">AI Agent 一键代装指南</h2>
-            <p class="section-desc" style="margin: 0;">支持 Cursor、Claude Code、Antigravity、Aider 等智能体自动接管。</p>
-          </div>
-          <button class="btn-accent btn-copy-prompt">
-            <i class="fa-solid fa-copy"></i> 一键复制完整 Agent 提示词
-          </button>
-        </div>
+    <div class="container" style="max-width: 860px;">
+      <div class="section-header">
+        <div class="subtitle">AI ASSISTED INSTALLATION</div>
+        <h2 class="section-title">AI 辅助安装</h2>
+        <p class="section-desc">如果你习惯使用 Cursor 等 AI 编程助手，可以让 AI 全权协助安装。</p>
+      </div>
 
-        <div class="ai-workflow-grid">
-          <div class="workflow-card">
-            <div class="step-num">PHASE 01</div>
-            <div class="step-title">智能环境预检</div>
-            <div class="step-desc">AI 自动扫描用户名/计算机名英文规范、磁盘空间，并在后台静默激活系统 IIS 功能。</div>
-          </div>
-          <div class="workflow-card">
-            <div class="step-num">PHASE 02</div>
-            <div class="step-title">0.05s 授权注入</div>
-            <div class="step-desc">AI 静默安装 Sentinel 服务，秒级写入 3130 项有效凭据，彻底淘汰耗时 30 分钟的卡死软件。</div>
-          </div>
-          <div class="workflow-card">
-            <div class="step-num">PHASE 03</div>
-            <div class="step-title">引导向导点击</div>
-            <div class="step-desc">AI 拉起安装器，仅在需要界面选择时提示用户点击（防呆留空许可证项，防止误填报错）。</div>
-          </div>
-          <div class="workflow-card">
-            <div class="step-num">PHASE 04</div>
-            <div class="step-title">异常拦截与验收</div>
-            <div class="step-desc">自动拦截 VC++ 2008 缺失缓存并秒级打补丁，安装完毕后自动核验 5093 端口健康度。</div>
-          </div>
-        </div>
+      <div class="card" style="padding: 2.2rem;">
+        <h3 class="card-title" style="margin-bottom: 0.8rem;">使用方式</h3>
+        <p class="card-desc" style="margin-bottom: 1.5rem;">
+          在 Cursor 或其他支持本地终端交互的 AI 助手中打开刚刚解压好的文件夹，把下面这段提示词复制后发送给 AI 即可：
+        </p>
 
-        <!-- Prompt Snippet Box -->
-        <div class="prompt-card">
+        <div class="prompt-card" style="margin-bottom: 1.5rem;">
           <div class="prompt-card-header">
-            <div class="term-dots">
-              <span class="dot red"></span>
-              <span class="dot yellow"></span>
-              <span class="dot green"></span>
-            </div>
-            <span class="term-title">AI_AGENT_PROMPT.txt（复制并发送给你的 AI 编程助手）</span>
+            <span class="term-title">发送给 AI 的提示词</span>
             <button class="btn-copy-code btn-copy-prompt"><i class="fa-regular fa-copy"></i> 复制提示词</button>
           </div>
-          <div class="prompt-card-body" id="ai-agent-prompt-text">你是一个专业的化工软件自动化部署智能体。请接管我电脑的安装任务，基于当前目录下的《AI_AGENT_INSTALL_GUIDE.md》与《preflight_and_patch.ps1》，全权协助我在本机的 D 盘完成 Aspen Plus / HYSYS V11 的自动化部署与验证。
-你的原则是：
-1. 优先调用脚本静默完成所有前置配置（系统环境预检、开启IIS、静默安装Sentinel RMS许可证、秒级注入3130项授权并配置LSHOST）；
-2. 仅在主程序必须使用图形向导时，帮我呼出安装界面并给出最精确的防呆点击提示（许可证服务器必须留空、取消无用组件、盘符改D）；
-3. 遇到安装中途 VC++ 运行库报错，自动执行 patch 命令帮我解决；
-4. 安装完成后自动进行连通性健康核查并向我汇报。</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 3: Pitfalls & FAQ -->
-  <section id="pitfalls" class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="subtitle">CRITICAL GOTCHAS</div>
-        <h2 class="section-title">核心避坑红线 (手动安装必读)</h2>
-        <p class="section-desc">90% 的学生安装失败或耗时数小时，都是因为踩了以下三个传统教程未说明的隐藏陷阱：</p>
-      </div>
-
-      <div class="pitfalls-grid">
-        <!-- Pitfall 1 -->
-        <div class="pitfall-item open">
-          <div class="pitfall-header">
-            <div class="pitfall-title-wrapper">
-              <div class="pitfall-icon icon-danger">
-                <i class="fa-solid fa-triangle-exclamation"></i>
-              </div>
-              <h3 class="pitfall-title">避坑 1：向导第 67 步许可证界面必须【完全留空】！</h3>
-            </div>
-            <i class="fa-solid fa-chevron-down chevron-icon"></i>
-          </div>
-          <div class="pitfall-content">
-            <p>
-              在安装向导进入 <strong>Specify licensing & security</strong> 页面时：<br>
-              ❌ <strong>绝对严禁点击 Add Server 添加计算机名！</strong><br>
-              ❌ <strong>绝对严禁在 License server 或 License file 输入框填写任何字符！</strong>
-            </p>
-            <div class="solution-box">
-              <strong>正确做法：</strong> 两个输入框均保持 <strong>100% 完全空白</strong>，直接点击右下角 <code>Next &gt;</code> 跳过即可！后台脚本已经通过全局 <code>LSHOST</code> 环境变量完成双通道绑定，填入计算机会直接导致 <em>"The version of the SLM License Server is not supported"</em> 致命冲突。
-            </div>
-          </div>
+          <div class="prompt-card-body" id="ai-agent-prompt-text" style="font-size: 0.92rem; line-height: 1.8;">请协助我在本机的 D 盘完成 Aspen Plus 与 HYSYS V11 的安装与配置。
+请根据当前目录下的安装包与脚本，优先在后台完成环境检查与许可证服务静默配置；
+当进入主程序图形向导时，请提醒我哪些选项需要取消以及许可证服务器留空的避坑事项；
+如果安装中途弹出缺少 VC 运行库的弹窗，请帮我自动修复；
+全部安装完成后请进行健康检查并向我确认。</div>
         </div>
 
-        <!-- Pitfall 2 -->
-        <div class="pitfall-item">
-          <div class="pitfall-header">
-            <div class="pitfall-title-wrapper">
-              <div class="pitfall-icon icon-warning">
-                <i class="fa-solid fa-wrench"></i>
-              </div>
-              <h3 class="pitfall-title">避坑 2：中途弹出 "vc_red.msi 缺失网络路径" 报错</h3>
-            </div>
-            <i class="fa-solid fa-chevron-down chevron-icon"></i>
-          </div>
-          <div class="pitfall-content">
-            <p>
-              安装过程中，Windows Installer 可能弹窗提示：<br>
-              <em>"The feature you are trying to use is on a network resource that is unavailable... 'vc_red.msi' ... d:\[随机十六进制目录]\"</em><br>
-              这是由于 Microsoft Visual C++ 2008 旧运行库找不到提取目录导致的。
-            </p>
-            <div class="solution-box">
-              <strong>一键解法：</strong> 打开 PowerShell 运行以下命令：<br>
-              <code>powershell -ExecutionPolicy Bypass -File .\preflight_and_patch.ps1 -Action patch-vcredist</code><br>
-              脚本会自动将解压后的 <code>vc_red.msi</code> 和 <code>vc_red.cab</code> 注入到所有十六进制临时目录中。注入后直接点击弹窗上的 <strong>「OK」</strong> 即可继续，无需取消或重装！
-            </div>
-          </div>
-        </div>
-
-        <!-- Pitfall 3 -->
-        <div class="pitfall-item">
-          <div class="pitfall-header">
-            <div class="pitfall-title-wrapper">
-              <div class="pitfall-icon icon-info">
-                <i class="fa-solid fa-database"></i>
-              </div>
-              <h3 class="pitfall-title">避坑 3：首次启动弹出物性数据库恢复，切勿强行结束进程！</h3>
-            </div>
-            <i class="fa-solid fa-chevron-down chevron-icon"></i>
-          </div>
-          <div class="pitfall-content">
-            <p>
-              首次启动 Aspen HYSYS 或 Aspen Plus 时，界面会弹出：<br>
-              <em>"Aspen Properties Database Configuration: Restoring databases and creating config.aem..."</em>
-            </p>
-            <div class="solution-box">
-              <strong>正确认知：</strong> 这是 Aspen 核心物性数据库的<strong>正常一次性初始化</strong>，耗时通常为 <strong>1 ~ 3 分钟</strong>。切勿误以为卡死而通过任务管理器杀掉进程，否则会导致物性数据库损坏、后续启动报缺少数据库错误。等待其自动加载完毕即可。
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 4: Preflight Commands -->
-  <section id="preflight" class="section">
-    <div class="container">
-      <div class="section-header">
-        <div class="subtitle">AUTOMATION SCRIPT CHEATSHEET</div>
-        <h2 class="section-title">自动化辅助脚本语法速查</h2>
-        <p class="section-desc">解压根目录下的 <code>preflight_and_patch.ps1</code> 封装了所有底层维护指令：</p>
-      </div>
-
-      <div class="card" style="padding: 1.5rem;">
-        <div class="cmd-box" style="margin-bottom: 0.8rem;">
-          <button class="btn-copy-code"><i class="fa-regular fa-copy"></i> 复制指令</button>
-          <pre><code><span class="code-comment"># 1. 系统预检：检查英文路径、磁盘空间与 SQL Server 状态</span>
-powershell -ExecutionPolicy Bypass -File .\preflight_and_patch.ps1 -Action check
-
-<span class="code-comment"># 2. 极速授权：静默安装 Sentinel RMS 并注入 3,130 项有效证书</span>
-powershell -ExecutionPolicy Bypass -File .\preflight_and_patch.ps1 -Action setup-license
-
-<span class="code-comment"># 3. 补丁注入：一键修复 VC++ 2008 缺失 vc_red.msi 弹窗</span>
-powershell -ExecutionPolicy Bypass -File .\preflight_and_patch.ps1 -Action patch-vcredist
-
-<span class="code-comment"># 4. 健康核查：验证 5093 端口通信与 Aspen 主程序完整性</span>
-powershell -ExecutionPolicy Bypass -File .\preflight_and_patch.ps1 -Action verify</code></pre>
+        <div style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.7;">
+          💡 <strong>AI 会协助你做的事</strong>：自动检查你的电脑用户名和路径是否为英文、秒级写入许可证文件避免人工卡死、在遇到 VC 运行库缺失报错时自动注入补丁文件，最大程度减少繁琐的手动操作。
         </div>
       </div>
     </div>
@@ -410,11 +271,11 @@ powershell -ExecutionPolicy Bypass -File .\preflight_and_patch.ps1 -Action verif
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p style="margin-bottom: 0.6rem;">
-        Aspen Plus / HYSYS V11 自动化安装套件由 <a href="https://hnnilovey.me" target="_blank"><strong>uuina</strong></a> 整理与优化
+      <p style="margin-bottom: 0.4rem;">
+        Aspen Plus 与 HYSYS V11 安装指南 由 <a href="https://hnnilovey.me" target="_blank"><strong>uuina</strong></a> 整理
       </p>
-      <p style="font-size: 0.78rem; color: var(--text-dim);">
-        本套件仅供化工原理、热工流体科研学习交流使用，软件著作权归原软件公司所有。
+      <p style="font-size: 0.78rem; color: var(--text-dim); margin-bottom: 0;">
+        本资料仅供专业学习与科研交流使用
       </p>
     </div>
   </footer>
@@ -422,10 +283,9 @@ powershell -ExecutionPolicy Bypass -File .\preflight_and_patch.ps1 -Action verif
   <!-- Toast Notification -->
   <div id="toast" class="toast">
     <i class="fa-solid fa-circle-check"></i>
-    <span id="toast-msg">已复制到剪贴板！</span>
+    <span id="toast-msg">已复制到剪贴板</span>
   </div>
 
-  <!-- Scripts -->
   <script src="app.js"></script>
 </body>
 </html>
