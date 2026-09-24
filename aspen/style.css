@@ -436,6 +436,69 @@ body {
   box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
 }
 
+/* Detailed Step Tutorial Styling */
+.step-item {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 1.8rem;
+  margin-bottom: 1.8rem;
+  transition: var(--transition);
+}
+
+.step-item:hover {
+  border-color: var(--border-hover);
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.step-badge {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--accent-violet);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.65rem;
+}
+
+.step-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.step-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.step-img-box {
+  background: #000000;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 0.6rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.step-img-box img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  display: block;
+  margin: 0 auto;
+}
+
 /* Code Snippet Box */
 .code-card {
   background: var(--bg-surface);
