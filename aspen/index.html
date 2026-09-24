@@ -86,52 +86,114 @@
 
   <!-- Section 1: Download -->
   <section id="download" class="section">
-    <div class="container" style="max-width: 860px;">
+    <div class="container" style="max-width: 960px;">
       <div class="section-header">
         <div class="subtitle">DOWNLOAD</div>
-        <h2 class="section-title">下载安装包</h2>
-        <p class="section-desc">包含完整的安装组件、许可证文件与说明，解压后即可直接使用。</p>
+        <h2 class="section-title">下载专区</h2>
+        <p class="section-desc">根据你的实际需求选择下载完整安装包，或仅下载教程与工具包。</p>
       </div>
 
-      <div class="card" style="padding: 2.2rem;">
-        <div class="file-meta-table" style="margin-bottom: 1.8rem;">
-          <div class="file-meta-row">
-            <span class="meta-label">文件名称</span>
-            <span class="meta-val">AspenPlus_V11_Full.zip</span>
-          </div>
-          <div class="file-meta-row">
-            <span class="meta-label">文件大小</span>
-            <span class="meta-val">约 9.5 GB</span>
-          </div>
-          <div class="file-meta-row">
-            <span class="meta-label">校验码 MD5</span>
-            <span class="meta-val">99E43DC772317991F55B68100C0F7B36</span>
-          </div>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 1.8rem;">
+        
+        <!-- Card 1: 完整安装包 -->
+        <div class="card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <a href="http://10.192.164.117:8080/AspenPlus_V11_Full.zip" target="_blank" rel="noopener noreferrer" class="btn-accent" style="justify-content: center; text-align: center; width: 100%; box-sizing: border-box; padding: 1rem;">
-              <i class="fa-solid fa-graduation-cap"></i> 校园网下载
-            </a>
-            <div style="font-size: 0.82rem; color: #f59e0b; margin-top: 0.6rem; text-align: center; line-height: 1.5;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem;">
+              <span style="font-size: 0.85rem; font-weight: 600; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em;">选项一</span>
+              <span style="background: rgba(99, 102, 241, 0.15); color: #818cf8; font-size: 0.78rem; padding: 0.25rem 0.65rem; border-radius: 9999px; font-weight: 500;">全套资源</span>
+            </div>
+            <h3 style="font-size: 1.35rem; font-weight: 700; margin-bottom: 0.6rem; color: #fff;">完整安装包</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem;">
+              包含官方安装镜像、独立组件运行库、许可证及全部配套教程，解压后即可直接开始安装。
+            </p>
+
+            <div class="file-meta-table" style="margin-bottom: 1.5rem;">
+              <div class="file-meta-row">
+                <span class="meta-label">文件名称</span>
+                <span class="meta-val">AspenPlus_V11_Full.zip</span>
+              </div>
+              <div class="file-meta-row">
+                <span class="meta-label">文件大小</span>
+                <span class="meta-val">约 9.5 GB</span>
+              </div>
+              <div class="file-meta-row">
+                <span class="meta-label">校验码 MD5</span>
+                <span class="meta-val">99E43DC772317991F55B68100C0F7B36</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+              <div>
+                <a href="http://10.192.164.117:8080/AspenPlus_V11_Full.zip" target="_blank" rel="noopener noreferrer" class="btn-accent" style="justify-content: center; text-align: center; width: 100%; box-sizing: border-box; padding: 0.85rem 0.5rem; font-size: 0.92rem;">
+                  <i class="fa-solid fa-graduation-cap"></i> 校园网下载
+                </a>
+              </div>
+              <div>
+                <a href="https://download.hnnilovey.me/AspenPlus_V11_Full.zip" class="btn-secondary" style="justify-content: center; text-align: center; width: 100%; box-sizing: border-box; padding: 0.85rem 0.5rem; font-size: 0.92rem;">
+                  <i class="fa-solid fa-cloud-arrow-down"></i> 通用网络下载
+                </a>
+              </div>
+            </div>
+            <div style="font-size: 0.78rem; color: #f59e0b; margin-top: 0.6rem; text-align: center; line-height: 1.5;">
               如果浏览器显示不能安全下载，右键选择保存或保留
             </div>
           </div>
+        </div>
+
+        <!-- Card 2: 仅下载教程与工具包 -->
+        <div class="card" style="padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; border-color: rgba(16, 185, 129, 0.3);">
           <div>
-            <a href="https://download.hnnilovey.me/AspenPlus_V11_Full.zip" class="btn-secondary" style="justify-content: center; text-align: center; width: 100%; box-sizing: border-box; padding: 1rem;">
-              <i class="fa-solid fa-cloud-arrow-down"></i> 通用网络下载
-            </a>
-            <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.6rem; text-align: center; line-height: 1.5;">
-              适合校外网络或校园网连接不畅时使用
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.2rem;">
+              <span style="font-size: 0.85rem; font-weight: 600; color: #10b981; text-transform: uppercase; letter-spacing: 0.05em;">选项二</span>
+              <span style="background: rgba(16, 185, 129, 0.15); color: #34d399; font-size: 0.78rem; padding: 0.25rem 0.65rem; border-radius: 9999px; font-weight: 500;">极速轻量</span>
+            </div>
+            <h3 style="font-size: 1.35rem; font-weight: 700; margin-bottom: 0.6rem; color: #fff;">安装教程与 AI 辅助工具包</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem;">
+              适合已通过网盘等渠道获取了安装包镜像的同学。内含离线版全套高清图文教程、AI Agent 规范文档及一键环境预检脚本。
+            </p>
+
+            <div class="file-meta-table" style="margin-bottom: 1.5rem;">
+              <div class="file-meta-row">
+                <span class="meta-label">文件名称</span>
+                <span class="meta-val">AspenPlus_V11_Tutorial.zip</span>
+              </div>
+              <div class="file-meta-row">
+                <span class="meta-label">文件大小</span>
+                <span class="meta-val">约 18 MB</span>
+              </div>
+              <div class="file-meta-row">
+                <span class="meta-label">包含内容</span>
+                <span class="meta-val">离线网页教程、AI 提示词指南、预检补丁脚本</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+              <div>
+                <a href="http://10.192.164.117:8080/AspenPlus_V11_Tutorial.zip" target="_blank" rel="noopener noreferrer" class="btn-accent" style="justify-content: center; text-align: center; width: 100%; box-sizing: border-box; padding: 0.85rem 0.5rem; font-size: 0.92rem; background: linear-gradient(135deg, #059669, #10b981);">
+                  <i class="fa-solid fa-graduation-cap"></i> 校园网下载
+                </a>
+              </div>
+              <div>
+                <a href="https://download.hnnilovey.me/AspenPlus_V11_Tutorial.zip" class="btn-secondary" style="justify-content: center; text-align: center; width: 100%; box-sizing: border-box; padding: 0.85rem 0.5rem; font-size: 0.92rem;">
+                  <i class="fa-solid fa-cloud-arrow-down"></i> 通用网络下载
+                </a>
+              </div>
+            </div>
+            <div style="font-size: 0.78rem; color: #f59e0b; margin-top: 0.6rem; text-align: center; line-height: 1.5;">
+              如果浏览器显示不能安全下载，右键选择保存或保留
             </div>
           </div>
         </div>
 
-        <p style="margin-top: 1.6rem; margin-bottom: 0; font-size: 0.84rem; color: var(--text-muted); line-height: 1.6; text-align: center;">
-          说明：在校内连接校园网时优先选择校园网下载，点击后会在新标签页直接开始下载；如果在校外，请选择通用网络下载。
-        </p>
       </div>
+
+      <p style="margin-top: 1.6rem; margin-bottom: 0; font-size: 0.84rem; color: var(--text-muted); line-height: 1.6; text-align: center;">
+        在校内连接校园网时优先选择校园网下载，点击后会在新标签页直接开始下载；如果在校外，请选择通用网络下载。
+      </p>
     </div>
   </section>
 
