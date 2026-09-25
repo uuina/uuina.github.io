@@ -165,7 +165,7 @@
               </div>
               <div class="file-meta-row">
                 <span class="meta-label">包含内容</span>
-                <span class="meta-val">离线网页教程、AI 提示词指南、预检补丁脚本</span>
+                <span class="meta-val">离线网页教程、AI 提示词指南、环境配置自动化脚本</span>
               </div>
             </div>
           </div>
@@ -358,8 +358,8 @@
             <span class="step-badge">步骤 37 至 45</span>
             <h4 class="step-title">安装 Sentinel RMS 许可证管理器</h4>
           </div>
-          <div class="step-desc">来到 02-破解 文件夹，进入 Sentinel RMS License Manager 8.5.1 目录，右键 Setup.exe 选择以管理员身份运行，勾选接受协议，安装类型选择 Complete 完整安装，点击 Install 安装完成并点击 Finish。</div>
-          <div class="step-img-box"><img src="images/img_040.png" alt="步骤37 来到破解文件夹" loading="lazy"></div>
+          <div class="step-desc">来到 02-许可证 文件夹，进入 Sentinel RMS License Manager 8.5.1 目录，右键 Setup.exe 选择以管理员身份运行，勾选接受协议，安装类型选择 Complete 完整安装，点击 Install 安装完成并点击 Finish。</div>
+          <div class="step-img-box"><img src="images/img_040.png" alt="步骤37 来到许可证文件夹" loading="lazy"></div>
           <div class="step-img-box"><img src="images/img_041.png" alt="步骤38 进入服务安装目录" loading="lazy"></div>
           <div class="step-img-box"><img src="images/img_042.png" alt="步骤39 管理员身份运行Setup" loading="lazy"></div>
           <div class="step-img-box"><img src="images/img_043.png" alt="步骤40 点击Next" loading="lazy"></div>
@@ -393,7 +393,7 @@
           <div class="step-desc">
             <strong>注意避坑说明</strong>：老教程中使用 Tools 目录下的 WlmAdmin 逐条导入证书，会导致程序白屏未响应大概持续三十分钟。
             <br><br>
-            <strong>新版极速生效方法</strong>：直接把 <code>02-破解</code> 文件夹里的 <code>lservrc</code> 授权文件，复制并粘贴到系统目录：
+            <strong>新版极速生效方法</strong>：直接把 <code>02-许可证</code> 文件夹里的 <code>lservrc</code> 授权文件，复制并粘贴到系统目录：
             <br>
             <code style="color: #38bdf8;">C:\Program Files (x86)\Common Files\SafeNet Sentinel\Sentinel RMS License Manager\WinNT</code>
             <br>
@@ -404,7 +404,7 @@
           <div class="step-img-box"><img src="images/img_056.png" alt="步骤53 进入tools文件夹" loading="lazy"></div>
           <div class="step-img-box"><img src="images/img_057.png" alt="步骤54 运行wlmadmin" loading="lazy"></div>
           <div class="step-img-box"><img src="images/img_058.png" alt="步骤55 选择添加证书" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_059.png" alt="步骤56 选择破解文件夹" loading="lazy"></div>
+          <div class="step-img-box"><img src="images/img_059.png" alt="步骤56 选择许可证文件夹" loading="lazy"></div>
           <div class="step-img-box"><img src="images/img_060.png" alt="步骤57 选择aspen.slf" loading="lazy"></div>
           <div class="step-img-box"><img src="images/img_061.png" alt="步骤58 卡顿无响应说明" loading="lazy"></div>
           <div class="step-img-box"><img src="images/img_062.png" alt="步骤59 导入成功显示3130" loading="lazy"></div>
@@ -451,7 +451,7 @@
             <br><br>
             按提示输入统一密码例如 Aa123456，输入完成后点击 Next，最后点击 Install Now 开始正式安装主程序。安装过程大概需要二十分钟。
             <br><br>
-            <em>若中途弹出缺少 vc_red.msi 路径报错</em>：把安装包内的补丁文件放入指定临时文件夹点 OK 即可继续。
+            <em>若中途弹出缺少 vc_red.msi 路径报错</em>：运行自动化脚本修复 VC 运行库缓存或手动将运行库文件放入指定临时文件夹点 OK 即可继续。
           </div>
           <div class="step-img-box"><img src="images/img_070.png" alt="步骤67 许可证服务器必须留空" loading="lazy"></div>
           <div class="step-img-box"><img src="images/img_071.png" alt="步骤68 输入统一密码" loading="lazy"></div>
@@ -543,15 +543,16 @@
             <span class="term-title">发送给 AI 的提示词</span>
             <button class="btn-copy-code btn-copy-prompt"><i class="fa-regular fa-copy"></i> 复制提示词</button>
           </div>
-          <div class="prompt-card-body" id="ai-agent-prompt-text" style="font-size: 0.92rem; line-height: 1.8;">请协助我在本机的 D 盘完成 Aspen Plus 与 HYSYS V11 的安装与配置。
-请根据当前目录下的安装包与脚本，优先在后台完成环境检查与许可证服务静默配置；
-当进入主程序图形向导时，请提醒我哪些选项需要取消以及许可证服务器留空的避坑事项；
-如果安装中途弹出缺少 VC 运行库的弹窗，请帮我自动修复；
-全部安装完成后请进行健康检查并向我确认。</div>
+          <div class="prompt-card-body" id="ai-agent-prompt-text" style="font-size: 0.92rem; line-height: 1.8;">你是一个专业的化工实验教学软件环境部署助手。请协助我在本机的 D 盘完成 Aspen Plus 与 HYSYS V11 本地教学实验环境的配置与安装向导核验。
+请基于当前目录下的《AI_AGENT_INSTALL_GUIDE.md》与《setup_environment.ps1》进行标准化部署：
+1. 优先调用 setup_environment.ps1 脚本在后台完成系统环境预检、Windows IIS 基础组件检查、本地教学许可证服务部署与环境变量配置；
+2. 在需要运行图形安装向导时，调出安装程序并指导我完成关键选项，包括目标盘符选择、许可证服务器留空以及统一密码设置；
+3. 若安装中途系统提示缺失 VC 运行库缓存文件，自动执行 repair-vcredist 命令协助修复；
+4. 主程序安装完成后，调用 verify 命令自动核验服务状态与关键组件完整度并向我反馈。</div>
         </div>
 
         <div style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.7;">
-          💡 <strong>AI 会协助你做的事</strong>：自动检查你的电脑用户名和路径是否为英文、秒级写入许可证文件避免人工卡死、在遇到 VC 运行库缺失报错时自动注入补丁文件，最大程度减少繁琐的手动操作。
+          💡 <strong>AI 会协助你做的事</strong>：自动检查你的电脑用户名和路径是否为英文、秒级写入许可证文件避免人工卡死、在遇到 VC 运行库缺失报错时自动修复运行库缓存文件，最大程度减少繁琐的手动操作。
         </div>
       </div>
     </div>
