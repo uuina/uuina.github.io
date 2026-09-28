@@ -31,8 +31,9 @@
       </a>
 
       <nav class="nav-links">
-        <a href="#download" class="nav-link">下载文件</a>
+        <a href="#download" class="nav-link">下载专区</a>
         <a href="#manual-guide" class="nav-link">人工安装教程</a>
+        <a href="#faq" class="nav-link">常见问题避坑</a>
         <a href="#ai-guide" class="nav-link">AI 辅助安装</a>
       </nav>
 
@@ -51,8 +52,9 @@
   <div id="mobile-drawer" class="mobile-drawer-overlay">
     <div class="mobile-drawer-content">
       <nav class="mobile-drawer-links">
-        <a href="#download" class="mobile-nav-link"><i class="fa-solid fa-download"></i> 下载文件</a>
+        <a href="#download" class="mobile-nav-link"><i class="fa-solid fa-download"></i> 下载专区</a>
         <a href="#manual-guide" class="mobile-nav-link"><i class="fa-solid fa-book-open"></i> 人工安装教程</a>
+        <a href="#faq" class="mobile-nav-link"><i class="fa-solid fa-circle-question"></i> 常见问题避坑</a>
         <a href="#ai-guide" class="mobile-nav-link"><i class="fa-solid fa-robot"></i> AI 辅助安装</a>
         <a href="https://hnnilovey.me" class="mobile-nav-link"><i class="fa-solid fa-house"></i> 返回主站</a>
       </nav>
@@ -246,331 +248,415 @@
 
   <!-- Section 2: Manual Detailed Guide -->
   <section id="manual-guide" class="section">
-    <div class="container" style="max-width: 920px;">
+    <div class="container" style="max-width: 960px;">
       <div class="section-header">
         <div class="subtitle">STEP BY STEP TUTORIAL</div>
-        <h2 class="section-title">人工图文安装教程</h2>
-        <p class="section-desc">本教程完全对照安装包内的真实流程，按部就班附带步骤截图，请依次操作。</p>
+        <h2 class="section-title">极速人工安装指南</h2>
+        <p class="section-desc">实测精炼重构版本，剔除冗余等待与重复点击，融入系统命令直达与底层避坑技巧。</p>
+      </div>
+
+      <!-- Fallback Notice Card -->
+      <div style="background: rgba(99, 102, 241, 0.08); border: 1px solid rgba(99, 102, 241, 0.25); border-radius: var(--radius-xl); padding: 1.4rem 1.6rem; margin-bottom: 2.5rem; display: flex; align-items: flex-start; gap: 1rem;">
+        <div style="font-size: 1.4rem; color: var(--accent-violet); flex-shrink: 0; margin-top: 0.15rem;">
+          <i class="fa-solid fa-circle-info"></i>
+        </div>
+        <div>
+          <h4 style="margin: 0 0 0.4rem 0; font-size: 1.02rem; color: #fff; font-weight: 700;">
+            新版精简实训指引 · 离线全量文档兜底说明
+          </h4>
+          <p style="margin: 0; font-size: 0.86rem; color: var(--text-secondary); line-height: 1.7;">
+            本指南为针对实际装机精炼重构的四阶段核心主线，大幅压缩了原本八十一步教程中的冗余点击。如果需要对照原始全量逐帧截图，在下载好的安装包解压目录中双击打开 <code style="color: #38bdf8;">Aspen Plus V11安装教程及注意事项.html</code> 即可随时离线对照查阅。
+          </p>
+        </div>
       </div>
 
       <!-- Phase 1 -->
-      <div style="margin-bottom: 3rem;">
+      <div style="margin-bottom: 3.2rem;">
         <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--border-color);">
           <div class="card-badge badge-blue" style="font-size: 0.9rem; padding: 0.3rem 0.8rem;">第一阶段</div>
-          <h3 style="margin: 0; font-size: 1.35rem; color: var(--text-primary);">准备工作与安全中心设置</h3>
+          <h3 style="margin: 0; font-size: 1.35rem; color: var(--text-primary);">环境准备与系统底层避坑</h3>
         </div>
 
+        <!-- 步骤 1: 路径与用户名规范 -->
         <div class="step-item">
           <div class="step-header">
             <span class="step-badge">步骤 1</span>
-            <h4 class="step-title">检查电脑用户名</h4>
+            <h4 class="step-title">确认用户名与解压路径全英文</h4>
           </div>
-          <div class="step-desc">Windows 用户名不能有中文，必须为纯英文或者英文与数字的组合。</div>
-          <div class="step-img-box"><img src="images/img_004.png" alt="步骤1 检查用户名" loading="lazy"></div>
+          <div class="step-desc">
+            Windows 用户名必须为纯英文或数字组合，解压目录绝对不能放在带有中文名称的桌面上，否则后续数据库引擎与仿真核心必定崩溃报错。
+            <br><br>
+            <strong>单盘与多盘电脑指引</strong>：如果电脑只有单个 C 盘且可用空间大于三十吉字节，直接解压并安装在 C 盘即可，无需强行划分新分区；如果电脑有 D 盘等数据盘，建议解压并安装在 D 盘。
+          </div>
+          <div class="step-img-box"><img src="images/img_004.png" alt="检查用户名" loading="lazy"></div>
+          <div class="step-img-box"><img src="images/img_005.png" alt="路径英文要求" loading="lazy"></div>
         </div>
 
+        <!-- 步骤 2: 固态硬盘高危避坑 -->
+        <div class="step-item" style="border-left: 3px solid #ef4444;">
+          <div class="step-header">
+            <span class="step-badge" style="background: rgba(239, 68, 68, 0.15); color: #f87171; border-color: rgba(239, 68, 68, 0.3);">核心必看</span>
+            <h4 class="step-title" style="color: #f87171;">新电脑与 Win11 固态硬盘扇区一键修复</h4>
+          </div>
+          <div class="step-desc">
+            <strong>高危故障预警</strong>：Windows 11 系统或近几年采用新式 NVMe 固态硬盘的轻薄本或游戏本，会向系统汇报大于 4KB 的物理扇区大小，导致后续安装 SQL Server 2012 时数据库引擎直接报红色叉号错误。
+            <br><br>
+            <strong>一秒解决办法</strong>：按键盘 <code>Win + S</code> 搜索 <code>cmd</code>，在右侧点击 <strong>以管理员身份运行</strong>，复制并运行下方整行命令，看到操作成功完成后 <strong>立即重启电脑</strong>：
+          </div>
+          <div class="cmd-box" style="margin: 1rem 0;">
+            <button class="btn-copy-code" title="复制命令"><i class="fa-regular fa-copy"></i></button>
+            <pre>REG ADD "HKLM\SYSTEM\CurrentControlSet\Services\stornvme\Parameters\Device" /v "ForcedPhysicalSectorSizeInBytes" /t REG_MULTI_SZ /d "* 4095" /f</pre>
+          </div>
+          <div style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.6;">
+            注意：执行该命令不会丢失任何数据，也不会伤及硬盘寿命，属于微软官方为老工业软件量身定制的标准兼容方案；重启电脑后底层存储驱动即可生效。
+          </div>
+        </div>
+
+        <!-- 步骤 3: 一键开启 IIS Web 核心 -->
         <div class="step-item">
           <div class="step-header">
             <span class="step-badge">步骤 2</span>
-            <h4 class="step-title">确认安装路径全英文</h4>
+            <h4 class="step-title">一键开启 Windows IIS Web 核心</h4>
           </div>
-          <div class="step-desc">后续安装时的所有安装路径均不能出现任何中文字符。</div>
-          <div class="step-img-box"><img src="images/img_005.png" alt="步骤2 路径英文要求" loading="lazy"></div>
+          <div class="step-desc">
+            Aspen 运行依赖系统的 IIS 基础组件。无需前往控制面板多层窗口翻找勾选，以管理员身份运行命令提示符，执行下方命令即可一秒静默启用：
+          </div>
+          <div class="cmd-box" style="margin: 1rem 0;">
+            <button class="btn-copy-code" title="复制命令"><i class="fa-regular fa-copy"></i></button>
+            <pre>dism /online /enable-feature /featurename:IIS-WebServerRole /featurename:IIS-HostableWebCore /all /norestart</pre>
+          </div>
+          <div class="step-img-box"><img src="images/img_038.png" alt="IIS组件勾选" loading="lazy"></div>
         </div>
 
+        <!-- 步骤 4: 暂时关闭防火墙与杀毒软件 -->
         <div class="step-item">
           <div class="step-header">
             <span class="step-badge">步骤 3</span>
             <h4 class="step-title">暂时关闭杀毒软件与防火墙</h4>
           </div>
-          <div class="step-desc">安装过程中需要写入底层服务，请暂时关闭第三方杀毒软件以及系统自带的安全中心。</div>
-          <div class="step-img-box"><img src="images/img_006.png" alt="步骤3 关闭杀毒软件" loading="lazy"></div>
-        </div>
-
-        <div class="step-item">
-          <div class="step-header">
-            <span class="step-badge">步骤 4</span>
-            <h4 class="step-title">以管理员身份运行向导</h4>
-          </div>
-          <div class="step-desc">给予软件足够的权限，后续所有安装程序均建议点击右键选择以管理员身份运行。</div>
-          <div class="step-img-box"><img src="images/img_007.png" alt="步骤4 管理员权限" loading="lazy"></div>
-        </div>
-
-        <div class="step-item">
-          <div class="step-header">
-            <span class="step-badge">步骤 5 至 8</span>
-            <h4 class="step-title">打开 Windows 安全中心</h4>
-          </div>
-          <div class="step-desc">点击电脑开始菜单打开系统设置，依次点击更新和安全，进入 Windows 安全中心。</div>
-          <div class="step-img-box"><img src="images/img_008.png" alt="步骤5 打开设置" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_009.png" alt="步骤6 更新和安全" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_010.png" alt="步骤7 安全中心" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_011.png" alt="步骤8 打开安全中心" loading="lazy"></div>
-        </div>
-
-        <div class="step-item">
-          <div class="step-header">
-            <span class="step-badge">步骤 9 至 11</span>
-            <h4 class="step-title">关闭防火墙保护项</h4>
-          </div>
-          <div class="step-desc">在安全中心中，将防火墙和网络保护以及应用和浏览器控制的相关防护选项暂时全部关闭。</div>
-          <div class="step-img-box"><img src="images/img_012.png" alt="步骤9 关闭防火墙和网络保护" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_013.png" alt="步骤10 全部关闭" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_014.png" alt="步骤11 关闭完成" loading="lazy"></div>
+          <div class="step-desc">安装过程中需要向系统注册底层服务，请暂时退出各类第三方杀毒软件，并在安全中心中暂时关闭网络防火墙保护项。</div>
+          <div class="step-img-box"><img src="images/img_006.png" alt="关闭杀毒软件" loading="lazy"></div>
+          <div class="step-img-box"><img src="images/img_013.png" alt="全部关闭" loading="lazy"></div>
         </div>
       </div>
 
       <!-- Phase 2 -->
-      <div style="margin-bottom: 3rem;">
+      <div style="margin-bottom: 3.2rem;">
         <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--border-color);">
           <div class="card-badge badge-blue" style="font-size: 0.9rem; padding: 0.3rem 0.8rem;">第二阶段</div>
-          <h3 style="margin: 0; font-size: 1.35rem; color: var(--text-primary);">安装前置必备组件与数据库</h3>
+          <h3 style="margin: 0; font-size: 1.35rem; color: var(--text-primary);">安装前置运行库与 SQL 2012 数据库</h3>
         </div>
 
+        <!-- 步骤 4: 安装 .NET Framework -->
         <div class="step-item">
           <div class="step-header">
-            <span class="step-badge">步骤 12 至 13</span>
-            <h4 class="step-title">解压安装包并进入组件目录</h4>
+            <span class="step-badge">步骤 4</span>
+            <h4 class="step-title">安装 .NET Framework 运行库</h4>
           </div>
-          <div class="step-desc">将下载好的压缩包解压，打开解压后的文件夹，进入 01-组件 目录。</div>
-          <div class="step-img-box"><img src="images/img_015.png" alt="步骤12 解压安装包" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_016.png" alt="步骤13 进入01-组件" loading="lazy"></div>
-        </div>
-
-        <div class="step-item">
-          <div class="step-header">
-            <span class="step-badge">步骤 14 至 18</span>
-            <h4 class="step-title">安装 Framework 3.5</h4>
+          <div class="step-desc">
+            打开解压后的 <code>01-组件</code> 文件夹：
+            <br>
+            1. 右键以管理员身份运行 <code>framework 3.5</code> 安装包，点击下载并安装此功能；若系统已内置则直接继续。
+            <br>
+            2. 右键以管理员身份运行 <code>framework 4.7.1</code> 安装包，提示已安装此更新直接关闭，未安装则按提示完成。
           </div>
-          <div class="step-desc">右键以管理员身份运行 framework 3.5 安装程序，点击下载并安装此功能，若无反应说明系统已内置安装，继续下一步即可。</div>
-          <div class="step-img-box"><img src="images/img_017.png" alt="步骤14 安装framework 3.5" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_018.png" alt="步骤15 管理员身份运行" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_019.png" alt="步骤16 下载并安装此功能" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_020.png" alt="步骤17 安装中" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_021.png" alt="步骤18 安装完成" loading="lazy"></div>
+          <div class="step-img-box"><img src="images/img_016.png" alt="进入01-组件" loading="lazy"></div>
+          <div class="step-img-box"><img src="images/img_019.png" alt="下载并安装此功能" loading="lazy"></div>
+          <div class="step-img-box"><img src="images/img_022.png" alt="安装framework 4.7.1" loading="lazy"></div>
         </div>
 
+        <!-- 步骤 5: 安装 SQL Server 2012 数据库 -->
         <div class="step-item">
           <div class="step-header">
-            <span class="step-badge">步骤 19 至 21</span>
-            <h4 class="step-title">安装 Framework 4.7.1</h4>
-          </div>
-          <div class="step-desc">右键以管理员身份运行 framework 4.7.1 安装包，如果提示已安装此更新则直接关闭，未安装则按提示安装完成。</div>
-          <div class="step-img-box"><img src="images/img_022.png" alt="步骤19 安装framework 4.7.1" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_023.png" alt="步骤20 管理员身份运行" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_024.png" alt="步骤21 检查已安装状态" loading="lazy"></div>
-        </div>
-
-        <div class="step-item">
-          <div class="step-header">
-            <span class="step-badge">步骤 22 至 31</span>
+            <span class="step-badge">步骤 5</span>
             <h4 class="step-title">安装 SQL Server 2012 数据库</h4>
           </div>
-          <div class="step-desc">进入 sql2012 文件夹，右键以管理员身份运行安装程序，点击第一个全新独立安装选项，勾选同意许可条款，选择默认实例，一路点击 Next 直到安装完成并点击 Close。</div>
-          <div class="step-img-box"><img src="images/img_025.png" alt="步骤22 进入sql2012" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_026.png" alt="步骤23 管理员身份运行" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_027.png" alt="步骤24 点击全新安装" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_028.png" alt="步骤25 勾选接受条款" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_029.png" alt="步骤26 安装规则更新" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_030.png" alt="步骤27 功能选择保持默认" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_031.png" alt="步骤28 选择默认实例" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_032.png" alt="步骤29 服务账户默认" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_033.png" alt="步骤30 身份验证默认" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_034.png" alt="步骤31 安装完成点击Close" loading="lazy"></div>
-        </div>
-
-        <div class="step-item">
-          <div class="step-header">
-            <span class="step-badge">步骤 32 至 36</span>
-            <h4 class="step-title">开启 Windows IIS Web 核心</h4>
+          <div class="step-desc">
+            进入 <code>sql2012</code> 文件夹，右键 <code>setup.exe</code> 选择以管理员身份运行：
+            <br>
+            1. 点击第一个 <strong>全新 SQL Server 独立安装</strong> 选项。
+            <br>
+            2. 勾选同意许可条款，功能选择保持默认。
+            <br>
+            3. 实例配置保持选择 <strong>默认实例</strong>，后续的服务账户与身份验证直接保持默认点击 Next。
+            <br>
+            4. 耐心等待安装进度走完，直到全部显示绿色对勾，点击 Close 关闭向导。
+            <br><br>
+            <em>若此处提示 Database Engine Services 出现红色叉号 Failed，说明电脑为新固态硬盘，请对照第一阶段运行扇区修复命令并重启后再装。</em>
           </div>
-          <div class="step-desc">打开系统控制面板，在卸载程序页面点击左侧的 启用或关闭 Windows 功能，勾选 Internet Information Services 以及可承载的 Web 核心，点击确定并等待系统配置完成。</div>
-          <div class="step-img-box"><img src="images/img_035.png" alt="步骤32 打开控制面板" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_036.png" alt="步骤33 进入卸载程序" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_037.png" alt="步骤34 启用或关闭Windows功能" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_038.png" alt="步骤35 勾选IIS组件" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_039.png" alt="步骤36 更改完成关闭" loading="lazy"></div>
+          <div class="step-img-box"><img src="images/img_027.png" alt="全新安装" loading="lazy"></div>
+          <div class="step-img-box"><img src="images/img_031.png" alt="默认实例" loading="lazy"></div>
+          <div class="step-img-box"><img src="images/img_034.png" alt="全部成功点击Close" loading="lazy"></div>
         </div>
       </div>
 
       <!-- Phase 3 -->
-      <div style="margin-bottom: 3rem;">
+      <div style="margin-bottom: 3.2rem;">
         <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--border-color);">
           <div class="card-badge badge-blue" style="font-size: 0.9rem; padding: 0.3rem 0.8rem;">第三阶段</div>
-          <h3 style="margin: 0; font-size: 1.35rem; color: var(--text-primary);">部署许可证服务与环境变量配置</h3>
+          <h3 style="margin: 0; font-size: 1.35rem; color: var(--text-primary);">部署许可证服务与极速授权激活</h3>
         </div>
 
+        <!-- 步骤 6: 安装 Sentinel RMS 许可证管理器 -->
         <div class="step-item">
           <div class="step-header">
-            <span class="step-badge">步骤 37 至 45</span>
+            <span class="step-badge">步骤 6</span>
             <h4 class="step-title">安装 Sentinel RMS 许可证管理器</h4>
           </div>
-          <div class="step-desc">来到 02-许可证 文件夹，进入 Sentinel RMS License Manager 8.5.1 目录，右键 Setup.exe 选择以管理员身份运行，勾选接受协议，安装类型选择 Complete 完整安装，点击 Install 安装完成并点击 Finish。</div>
-          <div class="step-img-box"><img src="images/img_040.png" alt="步骤37 来到许可证文件夹" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_041.png" alt="步骤38 进入服务安装目录" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_042.png" alt="步骤39 管理员身份运行Setup" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_043.png" alt="步骤40 点击Next" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_044.png" alt="步骤41 勾选接受协议" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_045.png" alt="步骤42 路径默认" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_046.png" alt="步骤43 选择Complete" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_047.png" alt="步骤44 点击Install" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_048.png" alt="步骤45 点击Finish" loading="lazy"></div>
-        </div>
-
-        <div class="step-item">
-          <div class="step-header">
-            <span class="step-badge">步骤 46 至 52</span>
-            <h4 class="step-title">获取计算机名并配置 LSHOST 环境变量</h4>
+          <div class="step-desc">
+            进入 <code>02-许可证\Sentinel RMS License Manager 8.5.1</code> 目录，右键 <code>Setup.exe</code> 选择以管理员身份运行。勾选接受协议，安装类型务必勾选 <strong>Complete</strong> 完整安装，一路点击 Next 直到安装完成并点击 Finish。
           </div>
-          <div class="step-desc">右键此电脑选择属性，查看并复制完整的计算机名称。接着进入高级系统设置，点击底部的环境变量，在系统变量中点击新建，变量名输入 LSHOST，变量值粘贴刚才复制的计算机名，点击确定保存。</div>
-          <div class="step-img-box"><img src="images/img_049.png" alt="步骤46 右键此电脑属性" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_050.png" alt="步骤47 高级系统设置" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_051.png" alt="步骤48 复制计算机名称" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_052.png" alt="步骤49 进入环境变量" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_053.png" alt="步骤50 点击新建系统变量" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_054.png" alt="步骤51 输入LSHOST与计算机名" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_055.png" alt="步骤52 点击确定保存" loading="lazy"></div>
+          <div class="step-img-box"><img src="images/img_042.png" alt="管理员身份运行Setup" loading="lazy"></div>
+          <div class="step-img-box"><img src="images/img_046.png" alt="选择Complete" loading="lazy"></div>
+          <div class="step-img-box"><img src="images/img_048.png" alt="点击Finish" loading="lazy"></div>
         </div>
 
+        <!-- 步骤 7: 一键配置 LSHOST 环境变量 -->
         <div class="step-item">
           <div class="step-header">
-            <span class="step-badge">步骤 53 至 59</span>
-            <h4 class="step-title">导入授权文件与核心避坑</h4>
+            <span class="step-badge">步骤 7</span>
+            <h4 class="step-title">一键配置 LSHOST 环境变量</h4>
           </div>
           <div class="step-desc">
-            <strong>注意避坑说明</strong>：老教程中使用 Tools 目录下的 WlmAdmin 逐条导入证书，会导致程序白屏未响应大概持续三十分钟。
-            <br><br>
-            <strong>新版极速生效方法</strong>：直接把 <code>02-许可证</code> 文件夹里的 <code>lservrc</code> 授权文件，复制并粘贴到系统目录：
-            <br>
-            <code style="color: #38bdf8;">C:\Program Files (x86)\Common Files\SafeNet Sentinel\Sentinel RMS License Manager\WinNT</code>
-            <br>
-            粘贴后打开电脑的 服务 管理工具，找到 <code>Sentinel RMS License Manager</code>，鼠标右键选择 <strong>重新启动</strong> 即可瞬间生效全部三千余项授权。
-            <br><br>
-            如果仍想按老教程手动打开 WlmAdmin 操作，请对照下方老教程步骤参考图示：
+            原本需要手动在控制面板中经过七个窗口反复查找电脑名称并新建系统变量。现在只需以管理员身份运行命令提示符，执行下方这行命令即可自动抓取本机名称并精准写入系统环境，绝无拼写错误风险：
           </div>
-          <div class="step-img-box"><img src="images/img_056.png" alt="步骤53 进入tools文件夹" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_057.png" alt="步骤54 运行wlmadmin" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_058.png" alt="步骤55 选择添加证书" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_059.png" alt="步骤56 选择许可证文件夹" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_060.png" alt="步骤57 选择aspen.slf" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_061.png" alt="步骤58 卡顿无响应说明" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_062.png" alt="步骤59 导入成功显示3130" loading="lazy"></div>
+          <div class="cmd-box" style="margin: 1rem 0;">
+            <button class="btn-copy-code" title="复制命令"><i class="fa-regular fa-copy"></i></button>
+            <pre>setx LSHOST %COMPUTERNAME% /M</pre>
+          </div>
+          <div style="font-size: 0.82rem; color: var(--text-muted); line-height: 1.6;">
+            命令成功执行后会显示 成功: 指定的值已保存。
+          </div>
+          <div class="step-img-box"><img src="images/img_054.png" alt="系统变量LSHOST参考" loading="lazy"></div>
+        </div>
+
+        <!-- 步骤 8: 极速注入授权文件 -->
+        <div class="step-item" style="border-left: 3px solid #10b981;">
+          <div class="step-header">
+            <span class="step-badge" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border-color: rgba(16, 185, 129, 0.3);">极速生效</span>
+            <h4 class="step-title" style="color: #34d399;">直达系统目录覆盖授权与服务重启</h4>
+          </div>
+          <div class="step-desc">
+            <strong>严禁使用老方法</strong>：切勿使用 Tools 目录下的 WlmAdmin 逐条导入证书，否则会导致程序白屏未响应长达三十分钟以上。
+            <br><br>
+            <strong>三秒极速生效做法</strong>：
+            <br>
+            1. 按键盘 <code>Win + R</code> 打开运行框，复制粘贴下方路径后按回车直接打开目标系统文件夹：
+          </div>
+          <div class="cmd-box" style="margin: 0.8rem 0;">
+            <button class="btn-copy-code" title="复制路径"><i class="fa-regular fa-copy"></i></button>
+            <pre>C:\Program Files (x86)\Common Files\SafeNet Sentinel\Sentinel RMS License Manager\WinNT</pre>
+          </div>
+          <div class="step-desc">
+            2. 将解压包内 <code>02-许可证</code> 文件夹里的 <code>lservrc</code> 文件复制，直接粘贴覆盖到刚才打开的 WinNT 文件夹中。
+            <br>
+            3. 按 <code>Win + R</code> 输入 <code>services.msc</code> 按回车打开服务窗口，找到 <code>Sentinel RMS License Manager</code>，鼠标右键点击 <strong>重新启动</strong> 即可瞬间生效全部功能授权。
+          </div>
+          <div class="step-img-box"><img src="images/img_062.png" alt="功能授权全部生效" loading="lazy"></div>
         </div>
       </div>
 
       <!-- Phase 4 -->
-      <div style="margin-bottom: 3rem;">
+      <div style="margin-bottom: 3.2rem;">
         <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--border-color);">
           <div class="card-badge badge-blue" style="font-size: 0.9rem; padding: 0.3rem 0.8rem;">第四阶段</div>
-          <h3 style="margin: 0; font-size: 1.35rem; color: var(--text-primary);">安装 Aspen 主程序与关键避坑</h3>
+          <h3 style="margin: 0; font-size: 1.35rem; color: var(--text-primary);">安装 Aspen 主程序与首次配置</h3>
         </div>
 
+        <!-- 步骤 9: 启动主安装向导与产品选择 -->
         <div class="step-item">
           <div class="step-header">
-            <span class="step-badge">步骤 60 至 64</span>
-            <h4 class="step-title">运行主安装程序</h4>
-          </div>
-          <div class="step-desc">来到 03-Aspen 文件夹，进入 aspenONE_V11_ENG 目录，鼠标右键 Setup.exe 选择以管理员身份运行，点击 Install aspenONE products，勾选同意许可协议并点击 Next。</div>
-          <div class="step-img-box"><img src="images/img_063.png" alt="步骤60 来到03-aspen文件夹" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_064.png" alt="步骤61 进入aspenone_v11_ENG" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_065.png" alt="步骤62 管理员身份运行Setup" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_066.png" alt="步骤63 点击Install products" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_067.png" alt="步骤64 勾选同意协议" loading="lazy"></div>
-        </div>
-
-        <div class="step-item">
-          <div class="step-header">
-            <span class="step-badge">步骤 65 至 66</span>
-            <h4 class="step-title">选择产品并修改安装路径</h4>
-          </div>
-          <div class="step-desc">在产品选择页面勾选需要的模拟组件，务必取消勾选无用的服务器工具以及基础工程组件。接着点击 File Location 标签，把默认的 C 盘全部更改为 D 盘路径。</div>
-          <div class="step-img-box"><img src="images/img_068.png" alt="步骤65 产品选择与取消勾选" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_069.png" alt="步骤66 修改安装位置为D盘" loading="lazy"></div>
-        </div>
-
-        <div class="step-item">
-          <div class="step-header">
-            <span class="step-badge">步骤 67 至 70</span>
-            <h4 class="step-title">许可证留空与正式安装</h4>
+            <span class="step-badge">步骤 9</span>
+            <h4 class="step-title">启动安装向导与路径选择</h4>
           </div>
           <div class="step-desc">
-            <strong>最重要的避坑步骤</strong>：进入许可证服务器界面时，<strong>License server 与 License file 两个输入框必须保持完全空白，绝对不要点击 Add Server 添加计算机名</strong>，直接点击右下角 Next 跳过即可。
+            来到 <code>03-AspenspenONE_V11_ENG</code> 文件夹，右键 <code>Setup.exe</code> 选择以管理员身份运行。
             <br><br>
-            按提示输入统一密码例如 Aa123456，输入完成后点击 Next，最后点击 Install Now 开始正式安装主程序。安装过程大概需要二十分钟。
+            1. 点击 Install aspenONE products，勾选同意协议并点击 Next。
+            <br>
+            2. 在产品选择页面勾选需要的模拟组件，取消勾选无用的服务器工具以及基础工程组件。
+            <br>
+            3. <strong>路径设置</strong>：有 D 盘的电脑点击 File Location 标签，把默认 C 盘的首字母全部更改为 D 盘；<strong>若是只有单个 C 盘的轻薄本，无需修改，直接保持默认 C 盘即可</strong>。
+          </div>
+          <div class="step-img-box"><img src="images/img_066.png" alt="点击Install products" loading="lazy"></div>
+          <div class="step-img-box"><img src="images/img_068.png" alt="产品勾选" loading="lazy"></div>
+          <div class="step-img-box"><img src="images/img_069.png" alt="修改安装路径" loading="lazy"></div>
+        </div>
+
+        <!-- 步骤 10: 核心绝密避坑：许可证留空 -->
+        <div class="step-item" style="border-left: 3px solid #f59e0b;">
+          <div class="step-header">
+            <span class="step-badge" style="background: rgba(245, 158, 11, 0.15); color: #fbbf24; border-color: rgba(245, 158, 11, 0.3);">最关键避坑</span>
+            <h4 class="step-title" style="color: #fbbf24;">许可证服务器输入框必须完全留空</h4>
+          </div>
+          <div class="step-desc">
+            <strong>全流程最重要的注意事项</strong>：进入许可证配置页面时，<strong>License server 与 License file 两个输入框必须保持完全空白，绝对不要点击 Add Server 添加计算机名</strong>，直接点击右下角 Next 跳过！
             <br><br>
-            <em>若中途弹出缺少 vc_red.msi 路径报错</em>：运行自动化脚本修复 VC 运行库缓存或手动将运行库文件放入指定临时文件夹点 OK 即可继续。
+            随后按提示输入统一密码例如 Aa123456，点击 Next 后点击 Install Now 开始正式安装主程序。安装过程大概需要十五至二十五分钟。
+            <br><br>
+            <em>若中途弹出缺少 vc_red.msi 路径报错，直接点击浏览，导航至解压包内 <code>03-AspenspenONE_V11_ENGspenonesuite\corecredist_x86_VS2008SP1\</code> 选中该文件确定即可继续。</em>
           </div>
-          <div class="step-img-box"><img src="images/img_070.png" alt="步骤67 许可证服务器必须留空" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_071.png" alt="步骤68 输入统一密码" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_072.png" alt="步骤69 点击Install Now开始安装" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_073.png" alt="步骤70 正在安装主程序" loading="lazy"></div>
+          <div class="step-img-box"><img src="images/img_070.png" alt="许可证服务器输入框必须留空" loading="lazy"></div>
+          <div class="step-img-box"><img src="images/img_071.png" alt="输入统一密码" loading="lazy"></div>
+          <div class="step-img-box"><img src="images/img_074.png" alt="安装完成点击Finish" loading="lazy"></div>
         </div>
 
+        <!-- 步骤 11: 首次启动与跳过注册 -->
         <div class="step-item">
           <div class="step-header">
-            <span class="step-badge">步骤 71 至 72</span>
-            <h4 class="step-title">安装完成并关闭向导</h4>
+            <span class="step-badge">步骤 10</span>
+            <h4 class="step-title">首次启动物性库初始化与跳过注册</h4>
           </div>
-          <div class="step-desc">所有组件安装完成后，点击 Finish 结束，随后点击 Close 关闭安装向导。</div>
-          <div class="step-img-box"><img src="images/img_074.png" alt="步骤71 安装完成点击Finish" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_075.png" alt="步骤72 点击Close关闭向导" loading="lazy"></div>
-        </div>
-      </div>
-
-      <!-- Phase 5 -->
-      <div style="margin-bottom: 3rem;">
-        <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--border-color);">
-          <div class="card-badge badge-blue" style="font-size: 0.9rem; padding: 0.3rem 0.8rem;">第五阶段</div>
-          <h3 style="margin: 0; font-size: 1.35rem; color: var(--text-primary);">首次启动与跳过注册</h3>
-        </div>
-
-        <div class="step-item">
-          <div class="step-header">
-            <span class="step-badge">步骤 73 至 74</span>
-            <h4 class="step-title">启动软件与物性数据库初始化</h4>
+          <div class="step-desc">
+            在开始菜单找到 Aspen Plus V11 打开，首次启动时会弹出物性数据库初始化窗口，耗时一至三分钟，请耐心等待它自动完成进入主界面，切勿强行结束进程。
+            <br><br>
+            若弹出注册向导，选择无支持账户，随意填表后点击 Submit by internet 左侧网页链接，在弹出窗口点击 OK 确认并关闭帮助，即可永久进入软件主界面。
           </div>
-          <div class="step-desc">在开始菜单找到 Aspen Plus V11 可以将其发送到桌面快捷方式。双击运行，首次启动时会弹出物性数据库初始化的小窗口，这是正常的一次性配置，通常耗时一到三分钟，请耐心等待它自动完成进入主界面，切勿强行结束进程。</div>
-          <div class="step-img-box"><img src="images/img_076.png" alt="步骤73 找到桌面快捷方式" loading="lazy"></div>
-        </div>
-
-        <div class="step-item">
-          <div class="step-header">
-            <span class="step-badge">步骤 75 至 81</span>
-            <h4 class="step-title">跳过注册向导并进入主程序</h4>
-          </div>
-          <div class="step-desc">如果弹出注册向导，点击 Register Now，选择 I do not have a support account 并点击 Next。随意填写信息后点击 Next，点击上面 Submit by internet 左侧的网页链接，弹出确认后点击 OK，关闭弹出的帮助页面即可永久跳过注册，顺利进入软件主界面。</div>
-          <div class="step-img-box"><img src="images/img_077.png" alt="步骤75 点击Register now" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_078.png" alt="步骤76 选择无支持账户" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_079.png" alt="步骤77 随意填表点击Next" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_080.png" alt="步骤78 点击Submit网页链接" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_081.png" alt="步骤79 点击OK确认" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_082.png" alt="步骤80 关闭帮助文件" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_083.png" alt="步骤81 全部安装完成" loading="lazy"></div>
-        </div>
-      </div>
-
-      <!-- Phase 6 -->
-      <div style="margin-bottom: 2rem;">
-        <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 1px solid var(--border-color);">
-          <div class="card-badge badge-blue" style="font-size: 0.9rem; padding: 0.3rem 0.8rem;">补充技巧</div>
-          <h3 style="margin: 0; font-size: 1.35rem; color: var(--text-primary);">中英文语言切换</h3>
-        </div>
-
-        <div class="step-item">
-          <div class="step-header">
-            <span class="step-badge">语言设置</span>
-            <h4 class="step-title">自由切换软件显示语言</h4>
-          </div>
-          <div class="step-desc">在开始菜单中找到 Aspentech 目录，打开 Select Aspen Language Utility 工具，即可根据个人习惯自由选择中文或英文界面。</div>
-          <div class="step-img-box"><img src="images/img_085.png" alt="语言设置1 找到工具" loading="lazy"></div>
-          <div class="step-img-box"><img src="images/img_086.png" alt="语言设置2 选择中英文" loading="lazy"></div>
+          <div class="step-img-box"><img src="images/img_076.png" alt="启动快捷方式" loading="lazy"></div>
+          <div class="step-img-box"><img src="images/img_078.png" alt="选择无支持账户" loading="lazy"></div>
+          <div class="step-img-box"><img src="images/img_080.png" alt="点击Submit网页链接跳过" loading="lazy"></div>
+          <div class="step-img-box"><img src="images/img_083.png" alt="顺利进入主界面" loading="lazy"></div>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- Section 3: AI Guide -->
+  <!-- Section 3: Pitfalls & FAQ Section -->
+  <section id="faq" class="section">
+    <div class="container" style="max-width: 960px;">
+      <div class="section-header">
+        <div class="subtitle">TROUBLESHOOTING & FAQ</div>
+        <h2 class="section-title">常见高频避坑与极速排错字典</h2>
+        <p class="section-desc">汇总历届学生装机实测中的典型问题，对号入座即可一分钟内快速脱困。</p>
+      </div>
+
+      <div class="pitfalls-grid">
+        
+        <!-- FAQ 1 -->
+        <div class="pitfall-item open">
+          <div class="pitfall-header">
+            <div class="pitfall-title-wrapper">
+              <div class="pitfall-icon icon-danger">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+              </div>
+              <div class="pitfall-title">SQL 2012 安装提示 Database Engine Services Failed 红色叉号报错</div>
+            </div>
+            <div class="chevron-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="pitfall-content">
+            <p><strong>问题成因</strong>：近几年的新款轻薄本或游戏本所配备的 NVMe 高速固态硬盘，其物理扇区大小汇报大于 4KB，导致旧版 SQL 2012 数据库引擎初始化时无法正常挂载系统数据库而崩溃报错。</p>
+            <div class="solution-box">
+              <strong>排错步骤</strong>：
+              <br>
+              1. 点击安装窗口右下角 Close 退出，打开 Windows 设置中的已安装应用，找到 Microsoft SQL Server 2012 彻底卸载清除残留。
+              <br>
+              2. 以管理员身份运行命令提示符，执行以下扇区标准化修复命令：
+              <div class="cmd-box" style="margin: 0.6rem 0;">
+                <button class="btn-copy-code" title="复制命令"><i class="fa-regular fa-copy"></i></button>
+                <pre>REG ADD "HKLM\SYSTEM\CurrentControlSet\Services\stornvme\Parameters\Device" /v "ForcedPhysicalSectorSizeInBytes" /t REG_MULTI_SZ /d "* 4095" /f</pre>
+              </div>
+              3. <strong>立即重启电脑</strong>，重启后重新打开 sql2012 目录中的 setup.exe 重新安装即可全绿通过。
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="pitfall-item">
+          <div class="pitfall-header">
+            <div class="pitfall-title-wrapper">
+              <div class="pitfall-icon icon-warning">
+                <i class="fa-solid fa-folder-open"></i>
+              </div>
+              <div class="pitfall-title">主程序安装到一半弹出弹窗寻找 vc_red.msi 路径</div>
+            </div>
+            <div class="chevron-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="pitfall-content">
+            <p><strong>问题成因</strong>：Aspen 在静默释放 Visual C 2008 运行时临时解压包被系统提早清理，导致向导无法定位安装包源文件。</p>
+            <div class="solution-box">
+              <strong>排错步骤</strong>：
+              <br>
+              在弹出的选择文件浏览对话框中，直接点击 Browse 浏览按钮，手动定位到你解压出的安装包内部目录：
+              <br>
+              <code>03-AspenspenONE_V11_ENGspenonesuite\corecredist_x86_VS2008SP1\</code>
+              <br>
+              选中里面的 <code>vc_red.msi</code> 文件并点击确定，向导即可顺利继续完成安装。
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="pitfall-item">
+          <div class="pitfall-header">
+            <div class="pitfall-title-wrapper">
+              <div class="pitfall-icon icon-info">
+                <i class="fa-solid fa-hard-drive"></i>
+              </div>
+              <div class="pitfall-title">轻薄本电脑只有一个 C 盘，没有 D 盘怎么安装</div>
+            </div>
+            <div class="chevron-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="pitfall-content">
+            <p><strong>问题成因</strong>：不少新款笔记本出厂默认将所有固态硬盘空间全部划归为单个 C 盘。</p>
+            <div class="solution-box">
+              <strong>排错指引</strong>：
+              <br>
+              完全不需要给硬盘重新分区或者借外接移动硬盘。只要确认 C 盘剩余可用空间大于三十吉字节，在第四阶段修改安装路径时直接保持默认的 C 盘路径直接安装即可，运行稳定性与多盘电脑没有任何区别。
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="pitfall-item">
+          <div class="pitfall-header">
+            <div class="pitfall-title-wrapper">
+              <div class="pitfall-icon icon-warning">
+                <i class="fa-solid fa-key"></i>
+              </div>
+              <div class="pitfall-title">打开软件弹出错误提示未能连接到有效的许可证服务器</div>
+            </div>
+            <div class="chevron-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="pitfall-content">
+            <p><strong>问题成因</strong>：系统环境变量 LSHOST 未生效、许可证文件未放入系统目录，或者 Sentinel RMS 后台服务未处于运行状态。</p>
+            <div class="solution-box">
+              <strong>排错步骤</strong>：
+              <br>
+              1. 以管理员身份运行命令提示符，执行 <code>setx LSHOST %COMPUTERNAME% /M</code> 重新写入本机计算机名。
+              <br>
+              2. 确认 <code>lservrc</code> 文件已被正确复制覆盖进系统 WinNT 目录。
+              <br>
+              3. 按 <code>Win + R</code> 输入 <code>services.msc</code> 找到 Sentinel RMS License Manager，右键选择重新启动。
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="pitfall-item">
+          <div class="pitfall-header">
+            <div class="pitfall-title-wrapper">
+              <div class="pitfall-icon icon-info">
+                <i class="fa-solid fa-language"></i>
+              </div>
+              <div class="pitfall-title">软件界面如何自由切换简体中文或英文</div>
+            </div>
+            <div class="chevron-icon"><i class="fa-solid fa-chevron-down"></i></div>
+          </div>
+          <div class="pitfall-content">
+            <p><strong>操作方法</strong>：</p>
+            <div class="solution-box">
+              点击电脑开始菜单，在所有程序中展开 <strong>Aspentech</strong> 文件夹，打开 <strong>Select Aspen Language Utility</strong> 工具，根据个人使用偏好勾选 Chinese 或 English，点击确定后重新启动软件即可完成界面语言切换。
+            </div>
+            <div class="step-img-box" style="margin-top: 1rem;"><img src="images/img_086.png" alt="选择中英文" loading="lazy"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: AI Guide -->
   <section id="ai-guide" class="section">
     <div class="container" style="max-width: 860px;">
       <div class="section-header">
